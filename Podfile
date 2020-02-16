@@ -6,5 +6,18 @@ target 'TimePlannerApp' do
   use_frameworks!
 
   # Pods for TimePlannerApp
+    pod 'Swinject','~> 2.6.2'
+    pod 'SwinjectStoryboard'
+
+  # RxSwift 3rd libs
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxOptional'
+    pod 'RxViewController'
+    pod 'RxGesture'
+    pod 'RxKeyboard'
+
+  # local database
+    pod 'RealmSwift'
 
 end

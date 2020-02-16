@@ -13,9 +13,11 @@
 		1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7223F9871B00D917F8 /* Main.storyboard */; };
 		1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7523F9872000D917F8 /* Assets.xcassets */; };
 		1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */; };
+		562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimePlannerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7F6B6923F9871B00D917F8 /* TimePlannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimePlannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		1F7F6B7523F9872000D917F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F7F6B7823F9872000D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7F6B7A23F9872000D917F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.release.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */,
 				1F7F6B6A23F9871B00D917F8 /* Products */,
+				2FD8F20DCCFF9D5F9AD88A3E /* Pods */,
+				72CFCAA0E1F91B42A6BE78D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = TimePlannerApp;
 			sourceTree = "<group>";
 		};
+		2FD8F20DCCFF9D5F9AD88A3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */,
+				6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		72CFCAA0E1F91B42A6BE78D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F7F6B7D23F9872000D917F8 /* Build configuration list for PBXNativeTarget "TimePlannerApp" */;
 			buildPhases = (
+				B0DAF906F3E4A7682DD2E9BA /* [CP] Check Pods Manifest.lock */,
 				1F7F6B6523F9871B00D917F8 /* Sources */,
 				1F7F6B6623F9871B00D917F8 /* Frameworks */,
 				1F7F6B6723F9871B00D917F8 /* Resources */,
+				2BDFDA584F1B0295B9531A48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BDFDA584F1B0295B9531A48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0DAF906F3E4A7682DD2E9BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimePlannerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F7F6B6523F9871B00D917F8 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		1F7F6B7E23F9872000D917F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		1F7F6B7F23F9872000D917F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
