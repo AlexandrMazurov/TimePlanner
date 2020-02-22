@@ -1,5 +1,5 @@
 //
-//  LaunchViewModel.swift
+//  AppConstans.swift
 //  TimePlannerApp
 //
 //  Created by Mazurov, Aleksandr on 2/22/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-class LaunchViewModel: BaseViewModel {
-    
+public enum AppConstants {
+    static let storyboardName: String = "Main"
 }

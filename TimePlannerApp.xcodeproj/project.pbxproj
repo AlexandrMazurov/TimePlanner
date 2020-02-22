@@ -16,6 +16,11 @@
 		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
 		4BBCBCE72401AE18008A12A8 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE62401AE17008A12A8 /* LaunchFlow.swift */; };
 		4BBCBCE92401AE3C008A12A8 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */; };
+		4BBCBCEC2401B076008A12A8 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */; };
+		4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */; };
+		4BBCBCF22401B34D008A12A8 /* AppConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCF12401B34D008A12A8 /* AppConstans.swift */; };
+		4BBCBCF42401B54F008A12A8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCF32401B54F008A12A8 /* BaseViewModel.swift */; };
+		4BBCBCF62401B85B008A12A8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCF52401B85B008A12A8 /* MainCoordinator.swift */; };
 		562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		4BBCBCE62401AE17008A12A8 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
 		4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
+		4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4BBCBCF12401B34D008A12A8 /* AppConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstans.swift; sourceTree = "<group>"; };
+		4BBCBCF32401B54F008A12A8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		4BBCBCF52401B85B008A12A8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.release.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +79,7 @@
 		1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BBCBCF02401B330008A12A8 /* Common */,
 				4BBCBCDE2401A93C008A12A8 /* Navigation */,
 				4BBCBCDD2401A937008A12A8 /* Scenes */,
 				1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */,
@@ -93,6 +104,7 @@
 		4BBCBCDD2401A937008A12A8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				4BBCBCED2401B1FF008A12A8 /* Common */,
 				4BBCBCDF2401A96A008A12A8 /* Launch */,
 			);
 			path = Scenes;
@@ -101,6 +113,7 @@
 		4BBCBCDE2401A93C008A12A8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				4BBCBCEA2401B051008A12A8 /* Coordinators */,
 				4BBCBCE42401ACDA008A12A8 /* Flows */,
 			);
 			path = Navigation;
@@ -138,6 +151,32 @@
 				4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		4BBCBCEA2401B051008A12A8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */,
+				4BBCBCF52401B85B008A12A8 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		4BBCBCED2401B1FF008A12A8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */,
+				4BBCBCF32401B54F008A12A8 /* BaseViewModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4BBCBCF02401B330008A12A8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCF12401B34D008A12A8 /* AppConstans.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		72CFCAA0E1F91B42A6BE78D0 /* Frameworks */ = {
@@ -263,10 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BBCBCF22401B34D008A12A8 /* AppConstans.swift in Sources */,
+				4BBCBCF42401B54F008A12A8 /* BaseViewModel.swift in Sources */,
+				4BBCBCEC2401B076008A12A8 /* CoordinatorProtocol.swift in Sources */,
 				4BBCBCE72401AE18008A12A8 /* LaunchFlow.swift in Sources */,
 				1F7F6B7123F9871B00D917F8 /* LaunchViewController.swift in Sources */,
+				4BBCBCF62401B85B008A12A8 /* MainCoordinator.swift in Sources */,
 				1F7F6B6D23F9871B00D917F8 /* AppDelegate.swift in Sources */,
 				1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */,
+				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
 				4BBCBCE92401AE3C008A12A8 /* ApplicationFlow.swift in Sources */,
 				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
 			);
