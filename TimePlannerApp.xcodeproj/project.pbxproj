@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1F7F6B6D23F9871B00D917F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */; };
 		1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */; };
-		1F7F6B7123F9871B00D917F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7023F9871B00D917F8 /* ViewController.swift */; };
+		1F7F6B7123F9871B00D917F8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7023F9871B00D917F8 /* LaunchViewController.swift */; };
 		1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7223F9871B00D917F8 /* Main.storyboard */; };
 		1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7523F9872000D917F8 /* Assets.xcassets */; };
 		1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */; };
+		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
+		4BBCBCE72401AE18008A12A8 /* LaunchFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE62401AE17008A12A8 /* LaunchFlow.swift */; };
+		4BBCBCE92401AE3C008A12A8 /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */; };
 		562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +24,15 @@
 		1F7F6B6923F9871B00D917F8 /* TimePlannerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimePlannerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F7F6B7023F9871B00D917F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F7F6B7023F9871B00D917F8 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		1F7F6B7323F9871B00D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F7F6B7523F9872000D917F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F7F6B7823F9872000D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7F6B7A23F9872000D917F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		4BBCBCE62401AE17008A12A8 /* LaunchFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchFlow.swift; sourceTree = "<group>"; };
+		4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
 		6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.release.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,9 +69,10 @@
 		1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BBCBCDE2401A93C008A12A8 /* Navigation */,
+				4BBCBCDD2401A937008A12A8 /* Scenes */,
 				1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */,
 				1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */,
-				1F7F6B7023F9871B00D917F8 /* ViewController.swift */,
 				1F7F6B7223F9871B00D917F8 /* Main.storyboard */,
 				1F7F6B7523F9872000D917F8 /* Assets.xcassets */,
 				1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */,
@@ -80,8 +87,57 @@
 				33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */,
 				6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4BBCBCDD2401A937008A12A8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCDF2401A96A008A12A8 /* Launch */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4BBCBCDE2401A93C008A12A8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCE42401ACDA008A12A8 /* Flows */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4BBCBCDF2401A96A008A12A8 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCE12401A9FE008A12A8 /* Controller */,
+				4BBCBCE02401A9B0008A12A8 /* ViewModel */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		4BBCBCE02401A9B0008A12A8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4BBCBCE12401A9FE008A12A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F7F6B7023F9871B00D917F8 /* LaunchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4BBCBCE42401ACDA008A12A8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				4BBCBCE62401AE17008A12A8 /* LaunchFlow.swift */,
+				4BBCBCE82401AE3C008A12A8 /* ApplicationFlow.swift */,
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 		72CFCAA0E1F91B42A6BE78D0 /* Frameworks */ = {
@@ -207,9 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F7F6B7123F9871B00D917F8 /* ViewController.swift in Sources */,
+				4BBCBCE72401AE18008A12A8 /* LaunchFlow.swift in Sources */,
+				1F7F6B7123F9871B00D917F8 /* LaunchViewController.swift in Sources */,
 				1F7F6B6D23F9871B00D917F8 /* AppDelegate.swift in Sources */,
 				1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */,
+				4BBCBCE92401AE3C008A12A8 /* ApplicationFlow.swift in Sources */,
+				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
