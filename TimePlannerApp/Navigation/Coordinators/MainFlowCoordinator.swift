@@ -20,6 +20,8 @@ class MainFlowCoordinator: CoordinatorProtocol {
     
     func start() {
         //start with tabBar
+        let tabBarVC = TabBarViewController()
+        navigationController.pushViewControllerWithFlipAnimation(viewController: tabBarVC)
     }
     
     func didFinishFlow() {

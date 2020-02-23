@@ -12,7 +12,13 @@ class LaunchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        guard let coordinator = coordinator as? MainCoordinator else {
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            coordinator.navigateToMainFlow()
+        }
+        
     }
 
 

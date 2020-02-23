@@ -38,6 +38,5 @@ class MainCoordinator: CoordinatorProtocol {
             }
         }
     }
-    
-    
+        
 }
