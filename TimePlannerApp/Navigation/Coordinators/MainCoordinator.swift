@@ -19,7 +19,24 @@ class MainCoordinator: CoordinatorProtocol {
     
     func start() {
         let vc = LaunchViewController.instantiate()
+        vc.configure(baseVM: LaunchViewModel(), coordinator: self)
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func navigateToMainFlow() {
+        let child = MainFlowCoordinator(navigationController: navigationController)
+        child.parentCoordinator = self
+        childsCoordinators.append(child)
+        child.start()
+    }
+    
+    func childDidFinish(_ child: CoordinatorProtocol?) {
+        for (index, coordinator) in childsCoordinators.enumerated() {
+            if coordinator === child {
+                childsCoordinators.remove(at: index)
+                break
+            }
+        }
     }
     
     
