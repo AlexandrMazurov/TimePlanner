@@ -1,5 +1,5 @@
 //
-//  TabBarViewController.swift
+//  TaskViewController.swift
 //  TimePlannerApp
 //
 //  Created by Mazurov, Aleksandr on 2/23/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TasksViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
