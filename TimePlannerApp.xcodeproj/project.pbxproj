@@ -13,6 +13,16 @@
 		1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7223F9871B00D917F8 /* Main.storyboard */; };
 		1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7523F9872000D917F8 /* Assets.xcassets */; };
 		1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */; };
+		4B3B176E241EAFC80046533A /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B176D241EAFC80046533A /* SwinjectStoryboard+Setup.swift */; };
+		4B3B1770241EAFDF0046533A /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B176F241EAFDF0046533A /* DependencyRegistry.swift */; };
+		4B3B1775241EB78E0046533A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1774241EB78E0046533A /* ProgressViewController.swift */; };
+		4B3B1777241EB8910046533A /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1776241EB8910046533A /* ProgressViewModel.swift */; };
+		4B3B1779241EBADF0046533A /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1778241EBADF0046533A /* TasksViewModel.swift */; };
+		4B3B177B241EBB710046533A /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B177A241EBB710046533A /* StatisticsViewModel.swift */; };
+		4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B177D241EBCE70046533A /* ControllerEntries.swift */; };
+		4B3B1780241EBF330046533A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B177F241EBF330046533A /* SettingsViewModel.swift */; };
+		4B3B1782241EC0E50046533A /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1781241EC0E50046533A /* TabBarViewModel.swift */; };
+		4B3B1784241EC3230046533A /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1783241EC3230046533A /* BaseTabBarController.swift */; };
 		4B3C753024025FEA004B584E /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C752F24025FEA004B584E /* MainFlowCoordinator.swift */; };
 		4B3C75332402C528004B584E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75322402C528004B584E /* TabBarViewController.swift */; };
 		4B3C75382402CB3A004B584E /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75372402CB3A004B584E /* TasksViewController.swift */; };
@@ -39,6 +49,16 @@
 		1F7F6B7823F9872000D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7F6B7A23F9872000D917F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4B3B176D241EAFC80046533A /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
+		4B3B176F241EAFDF0046533A /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
+		4B3B1774241EB78E0046533A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		4B3B1776241EB8910046533A /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
+		4B3B1778241EBADF0046533A /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TasksViewModel.swift; path = TimePlannerApp/Scenes/Progress/ViewModel/TasksViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4B3B177A241EBB710046533A /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatisticsViewModel.swift; path = TimePlannerApp/Scenes/Progress/ViewModel/StatisticsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4B3B177D241EBCE70046533A /* ControllerEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntries.swift; sourceTree = "<group>"; };
+		4B3B177F241EBF330046533A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = TimePlannerApp/Helpers/SettingsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4B3B1781241EC0E50046533A /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewModel.swift; path = TimePlannerApp/Helpers/TabBarViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4B3B1783241EC3230046533A /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4B3C752F24025FEA004B584E /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		4B3C75322402C528004B584E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		4B3C75372402CB3A004B584E /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +107,8 @@
 		1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4B3B177C241EBCC00046533A /* Helpers */,
+				4B3B176C241EAFA00046533A /* DI */,
 				4BBCBCF02401B330008A12A8 /* Common */,
 				4BBCBCDE2401A93C008A12A8 /* Navigation */,
 				4BBCBCDD2401A937008A12A8 /* Scenes */,
@@ -107,6 +129,48 @@
 				6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B3B176C241EAFA00046533A /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B176D241EAFC80046533A /* SwinjectStoryboard+Setup.swift */,
+				4B3B176F241EAFDF0046533A /* DependencyRegistry.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		4B3B1771241EB7260046533A /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B1772241EB74D0046533A /* Controller */,
+				4B3B1773241EB7590046533A /* ViewModel */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		4B3B1772241EB74D0046533A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B1774241EB78E0046533A /* ProgressViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4B3B1773241EB7590046533A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B1776241EB8910046533A /* ProgressViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B3B177C241EBCC00046533A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B177D241EBCE70046533A /* ControllerEntries.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		4B3C75312402C466004B584E /* TabBar */ = {
@@ -138,6 +202,7 @@
 		4B3C75362402CAF7004B584E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B3B1778241EBADF0046533A /* TasksViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,6 +219,7 @@
 		4B3C753A2402CB91004B584E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B3B177A241EBB710046533A /* StatisticsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +244,7 @@
 		4B3C753D2402CBC1004B584E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B3B177F241EBF330046533A /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,6 +276,7 @@
 		4B43382824044C4400272CA4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B3B1781241EC0E50046533A /* TabBarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,6 +287,7 @@
 				4B3C75312402C466004B584E /* TabBar */,
 				4BBCBCED2401B1FF008A12A8 /* Common */,
 				4BBCBCDF2401A96A008A12A8 /* Launch */,
+				4B3B1771241EB7260046533A /* Progress */,
 				4B3C75342402CAD7004B584E /* Tasks */,
 				4B3C75392402CB7B004B584E /* Statistics */,
 				4B3C753C2402CBB2004B584E /* Settings */,
@@ -274,6 +343,7 @@
 			children = (
 				4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */,
 				4BBCBCF32401B54F008A12A8 /* BaseViewModel.swift */,
+				4B3B1783241EC3230046533A /* BaseTabBarController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -410,19 +480,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3B1777241EB8910046533A /* ProgressViewModel.swift in Sources */,
+				4B3B1780241EBF330046533A /* SettingsViewModel.swift in Sources */,
 				4BBCBCF22401B34D008A12A8 /* AppConstans.swift in Sources */,
 				4B3C75382402CB3A004B584E /* TasksViewController.swift in Sources */,
+				4B3B1770241EAFDF0046533A /* DependencyRegistry.swift in Sources */,
 				4BBCBCF42401B54F008A12A8 /* BaseViewModel.swift in Sources */,
 				4BBCBCEC2401B076008A12A8 /* CoordinatorProtocol.swift in Sources */,
 				1F7F6B7123F9871B00D917F8 /* LaunchViewController.swift in Sources */,
+				4B3B176E241EAFC80046533A /* SwinjectStoryboard+Setup.swift in Sources */,
 				4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */,
+				4B3B1779241EBADF0046533A /* TasksViewModel.swift in Sources */,
 				4B3C75452402CC98004B584E /* UINavigationController+Push.swift in Sources */,
 				4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */,
 				4B3C753024025FEA004B584E /* MainFlowCoordinator.swift in Sources */,
 				4BBCBCF62401B85B008A12A8 /* MainCoordinator.swift in Sources */,
 				1F7F6B6D23F9871B00D917F8 /* AppDelegate.swift in Sources */,
+				4B3B1782241EC0E50046533A /* TabBarViewModel.swift in Sources */,
+				4B3B1784241EC3230046533A /* BaseTabBarController.swift in Sources */,
 				1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */,
+				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
+				4B3B177B241EBB710046533A /* StatisticsViewModel.swift in Sources */,
+				4B3B1775241EB78E0046533A /* ProgressViewController.swift in Sources */,
 				4B3C75332402C528004B584E /* TabBarViewController.swift in Sources */,
 				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
 			);
