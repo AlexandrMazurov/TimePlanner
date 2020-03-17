@@ -27,6 +27,7 @@ extension SwinjectStoryboard {
         func main() {
             dependencyRegistry.container.storyboardInitCompleted(LaunchViewController.self) { (reg, controller) in
                 let coordinator = dependencyRegistry.makeMainCoordinator(rootViewController: controller)
+                setupData(resolver: reg, navigationCoordinator: coordinator)
                 controller.configure(baseVM: reg.resolve(LaunchViewModel.self), coordinator: coordinator)
             }
             
@@ -50,9 +51,13 @@ extension SwinjectStoryboard {
                 controller.configure(baseVM: reg.resolve(SettingsViewModel.self), coordinator: coordinator)
             }
         }
+        
+        func setupData(resolver res: Resolver,  navigationCoordinator: CoordinatorProtocol) {
+            SceneDelegate.rootCoordinator = navigationCoordinator
+        }
+        
+        main()
     }
     
-    func setupData(navigationCoordinator: CoordinatorProtocol) {
-        SceneDelegate.rootCoordinator = navigationCoordinator
-    }
+
 }

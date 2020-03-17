@@ -8,11 +8,7 @@
 
 import RxSwift
 
-protocol Storyboarded {
-    static func instantiate() -> Self
-}
-
-class BaseViewController: UIViewController, Storyboarded {
+class BaseViewController: UIViewController {
 
     private(set) var rxBag = DisposeBag()
     private(set) var viewModel: BaseViewModel?
@@ -30,13 +26,4 @@ class BaseViewController: UIViewController, Storyboarded {
     
     internal func createObservers() {}
     
-}
-
-extension Storyboarded {
-
-    static func instantiate() -> Self {
-        let id = String(describing: self)
-        let storyboard = UIStoryboard(name: AppConstants.storyboardName, bundle: Bundle.main)
-        return storyboard.instantiateViewController(identifier: id) as! Self
-    }
 }

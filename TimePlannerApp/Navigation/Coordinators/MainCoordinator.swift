@@ -10,21 +10,31 @@ import UIKit
 
 class MainCoordinator: CoordinatorProtocol {
     
-    var childsCoordinators = [CoordinatorProtocol]()
-    var navigationController: UINavigationController
+    var childsCoordinators = [CoordinatorProtocol?]()
+    var navigationController: UIViewController
+    private(set) weak var registry: DependencyRegistryProtocol!
     
-    init(navigationController: UINavigationController) {
+    
+    init(navigationController: UIViewController, registry: DependencyRegistryProtocol) {
         self.navigationController = navigationController
+        self.registry = registry
     }
     
     func start() {
-        let vc = LaunchViewController.instantiate()
-        vc.configure(baseVM: LaunchViewModel(), coordinator: self)
-        navigationController.pushViewController(vc, animated: false)
+        guard let controller = registry.container.resolve(LaunchViewController.self) else {
+            return
+        }
+        controller.configure(baseVM: registry.container.resolve(LaunchViewModel.self), coordinator: self)
+        guard let navigationController = navigationController as? UINavigationController else {
+            return
+        }
+        navigationController.pushViewController(controller, animated: false)
     }
     
     func navigateToMainFlow() {
-        let child = MainFlowCoordinator(navigationController: navigationController)
+        guard let child = registry.makeMainFlowCoordinator(rootViewController: navigationController) as? MainFlowCoordinator else {
+            return
+        }
         child.parentCoordinator = self
         childsCoordinators.append(child)
         child.start()

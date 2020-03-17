@@ -7,14 +7,17 @@
 //
 
 import RxSwift
+import RxCocoa
 
 class TabBarViewModel: BaseViewModel {
     
+    private let tabBarControllers: TabBarControllersModel?
     
-    init(progressViewController: ProgressViewController,
-         tasksViewController: TasksViewController,
-         statisticsViewController: StatisticsViewController,
-         settingsViewController: SettingsViewController) {
-        
+    init(controllers: TabBarControllersModel?) {
+        self.tabBarControllers = controllers
+    }
+    
+    func getTabBarControllers() -> TabBarControllersModel? {
+        return tabBarControllers
     }
 }

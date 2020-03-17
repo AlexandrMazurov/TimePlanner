@@ -29,6 +29,7 @@
 		4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C753F2402CC06004B584E /* StatisticsViewController.swift */; };
 		4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75412402CC24004B584E /* SettingsViewController.swift */; };
 		4B3C75452402CC98004B584E /* UINavigationController+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75442402CC98004B584E /* UINavigationController+Push.swift */; };
+		4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9342BB242128230013F520 /* TabBarControllersModel.swift */; };
 		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
 		4BBCBCEC2401B076008A12A8 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */; };
 		4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */; };
@@ -65,6 +66,7 @@
 		4B3C753F2402CC06004B584E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		4B3C75412402CC24004B584E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B3C75442402CC98004B584E /* UINavigationController+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Push.swift"; sourceTree = "<group>"; };
+		4B9342BB242128230013F520 /* TabBarControllersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllersModel.swift; sourceTree = "<group>"; };
 		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		4B43382824044C4400272CA4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4B9342BB242128230013F520 /* TabBarControllersModel.swift */,
 				4B3B1781241EC0E50046533A /* TabBarViewModel.swift */,
 			);
 			path = ViewModel;
@@ -491,6 +494,7 @@
 				4B3B176E241EAFC80046533A /* SwinjectStoryboard+Setup.swift in Sources */,
 				4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */,
 				4B3B1779241EBADF0046533A /* TasksViewModel.swift in Sources */,
+				4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */,
 				4B3C75452402CC98004B584E /* UINavigationController+Push.swift in Sources */,
 				4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */,
 				4B3C753024025FEA004B584E /* MainFlowCoordinator.swift in Sources */,

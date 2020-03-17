@@ -9,7 +9,7 @@
 import UIKit
 import Swinject
 
-protocol DependencyRegistryProtocol {
+protocol DependencyRegistryProtocol: AnyObject {
     var container: Container { get }
     var navigationCoordinator: CoordinatorProtocol! { get }
     
@@ -24,13 +24,35 @@ class DependencyRegistry: DependencyRegistryProtocol {
     
     init(container: Container) {
         self.container = container
+        registerViewModels()
+        registerDependencies()
+        registerViewControllers()
     }
     
     private func registerDependencies() {
         
+        container.register(MainCoordinator.self) { (_, rootViewController: UIViewController) in
+            return MainCoordinator(navigationController: rootViewController, registry: self)
+        }
+        
+        container.register(MainFlowCoordinator.self) { (_, rootViewController: UIViewController) in
+            return MainFlowCoordinator(navigationController: rootViewController, registry: self)
+        }
+        
+        container.register(TabBarControllersModel.self) {
+            TabBarControllersModel(progressViewController: $0.resolve(ProgressViewController.self),
+                                   tasksViewController: $0.resolve(TasksViewController.self),
+                                   completedTasksViewController: $0.resolve(TasksViewController.self),
+                                   statisticsViewController: $0.resolve(StatisticsViewController.self),
+                                   settingsViewController: $0.resolve(SettingsViewController.self))
+        }
     }
     
     private func registerViewModels() {
+        container.register(TabBarViewModel.self) {
+            TabBarViewModel(controllers: $0.resolve(TabBarControllersModel.self))
+        }
+        
         container.register(LaunchViewModel.self) { _ in
             LaunchViewModel()
         }

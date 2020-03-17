@@ -8,35 +8,38 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController, Storyboarded {
+class TabBarViewController: BaseTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO: Provide DI
         
-        setupViewControllers(
-            currentTask: TasksViewController.instantiate(),
-            completeTask: TasksViewController.instantiate(),
-            feautureTask: TasksViewController.instantiate(),
-            statistics: StatisticsViewController.instantiate(),
-            settings: SettingsViewController.instantiate())
+        guard let viewModel = viewModel as? TabBarViewModel else {
+            return
+        }
+        let controllers = viewModel.getTabBarControllers()
+        setupViewControllers(progress: controllers?.progressViewController,
+                             tasks: controllers?.tasksViewController,
+                             completeTask: controllers?.completedTasksViewController,
+                             statistics: controllers?.statisticsViewController,
+                             settings: controllers?.settingsViewController)
         
     }
     
     
-    func setupViewControllers(currentTask currentTaskViewController: TasksViewController,
-                              completeTask completeTaskViewController: TasksViewController,
-                              feautureTask featutureTaskViewController: TasksViewController,
-                              statistics statisticsViewController: StatisticsViewController,
-                              settings settingsViewController: SettingsViewController) {
-        let currentTask = wrapController(currentTaskViewController,
-                                      title: "Current",
+    func setupViewControllers(progress progressViewController: ProgressViewController?,
+                              tasks tasksViewController: TasksViewController?,
+                              completeTask completeTaskViewController: TasksViewController?,
+                              statistics statisticsViewController: StatisticsViewController?,
+                              settings settingsViewController: SettingsViewController?) {
+        let progress = wrapController(progressViewController,
+                                      title: "Progress",
                                       image: nil)
-        let completeTask = wrapController(completeTaskViewController,
-                                     title: "Complete",
+        let tasks = wrapController(tasksViewController,
+                                     title: "Tasks",
                                      image: nil)
-        let feautureTask = wrapController(featutureTaskViewController,
-                                     title: "Featuture",
+        let completeTasks = wrapController(completeTaskViewController,
+                                     title: "Completed",
                                      image: nil)
         let statistics = wrapController(statisticsViewController,
                                      title: "Statistics",
@@ -45,13 +48,16 @@ class TabBarViewController: UITabBarController, Storyboarded {
                                       title: "Settings",
                                       image: nil)
         
-        viewControllers = [currentTask, completeTask, feautureTask, statistics, settings]
+        viewControllers = [progress, tasks, completeTasks, statistics, settings]
     }
     
-    private func wrapController(_ controller: UIViewController,
+    private func wrapController(_ controller: UIViewController?,
                                 title: String,
                                 image: UIImage? = nil,
                                 selectedImage: UIImage? = nil) -> UINavigationController {
+        guard let controller = controller else {
+            return UINavigationController()
+        }
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
         return navigationController

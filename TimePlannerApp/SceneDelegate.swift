@@ -10,7 +10,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
-    var rootCoordinator: CoordinatorProtocol?
+    static var dependencyRegistry: DependencyRegistryProtocol!
+    static var rootCoordinator: CoordinatorProtocol!
     var window: UIWindow?
 
 
@@ -19,12 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        let navController = UINavigationController()
-        rootCoordinator = MainCoordinator(navigationController: navController)
-        rootCoordinator?.start()
-        
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
+        //SceneDelegate.rootCoordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

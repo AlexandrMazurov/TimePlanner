@@ -11,17 +11,21 @@ import UIKit
 class MainFlowCoordinator: CoordinatorProtocol {
 
     weak var parentCoordinator: CoordinatorProtocol?
-    var childsCoordinators = [CoordinatorProtocol]()
-    var navigationController: UINavigationController
+    var childsCoordinators = [CoordinatorProtocol?]()
+    var navigationController: UIViewController
+    private(set) var registry: DependencyRegistry!
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UIViewController, registry: DependencyRegistry) {
         self.navigationController = navigationController
+        self.registry = registry
     }
     
     func start() {
         //start with tabBar
-        let tabBarVC = TabBarViewController.instantiate()
-        navigationController.pushViewControllerWithFlipAnimation(viewController: tabBarVC)
+        guard let tabBarVC = registry.container.resolve(TabBarViewController.self) else {
+            return
+        }
+        navigationController.navigationController?.pushViewControllerWithFlipAnimation(viewController: tabBarVC)
     }
     
     func didFinishFlow() {
