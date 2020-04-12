@@ -24,8 +24,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
     
     init(container: Container) {
         self.container = container
-        registerViewModels()
         registerDependencies()
+        registerViewModels()
         registerViewControllers()
     }
     
@@ -40,25 +40,24 @@ class DependencyRegistry: DependencyRegistryProtocol {
         }
         
         container.register(TabBarControllersModel.self) {
-            TabBarControllersModel(progressViewController: $0.resolve(ProgressViewController.self),
+            TabBarControllersModel(dashboardViewController: $0.resolve(DashboardViewController.self),
                                    tasksViewController: $0.resolve(TasksViewController.self),
-                                   completedTasksViewController: $0.resolve(TasksViewController.self),
                                    statisticsViewController: $0.resolve(StatisticsViewController.self),
                                    settingsViewController: $0.resolve(SettingsViewController.self))
         }
     }
     
     private func registerViewModels() {
-        container.register(TabBarViewModel.self) {
-            TabBarViewModel(controllers: $0.resolve(TabBarControllersModel.self))
+        container.register(TabBarViewModel.self) { _ in
+            TabBarViewModel()
         }
         
         container.register(LaunchViewModel.self) { _ in
             LaunchViewModel()
         }
         
-        container.register(ProgressViewModel.self) { _ in
-            ProgressViewModel()
+        container.register(DashboardViewModel.self) { _ in
+            DashboardViewModel()
         }
         
         container.register(TasksViewModel.self) { _ in
@@ -84,8 +83,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
             LaunchViewController.instantiate(from: .main)
         }
         
-        container.register(ProgressViewController.self) { _ in
-            ProgressViewController.instantiate(from: .main)
+        container.register(DashboardViewController.self) { _ in
+            DashboardViewController.instantiate(from: .main)
         }
         
         container.register(TasksViewController.self) { _ in

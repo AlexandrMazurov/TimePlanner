@@ -25,6 +25,12 @@ class MainFlowCoordinator: CoordinatorProtocol {
         guard let tabBarVC = registry.container.resolve(TabBarViewController.self) else {
             return
         }
+        tabBarVC.configure(baseVM: registry.container.resolve(TabBarViewModel.self), coordinator: self)
+        let model = registry.container.resolve(TabBarControllersModel.self)
+        tabBarVC.setupViewControllers(dashboard: model?.dashboardViewController,
+                                      tasks: model?.tasksViewController,
+                                      statistics: model?.statisticsViewController,
+                                      settings: model?.settingsViewController)
         navigationController.navigationController?.pushViewControllerWithFlipAnimation(viewController: tabBarVC)
     }
     

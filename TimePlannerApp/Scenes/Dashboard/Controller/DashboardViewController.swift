@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressViewController: BaseViewController {
+class DashboardViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

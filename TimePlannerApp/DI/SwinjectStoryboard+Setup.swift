@@ -31,9 +31,9 @@ extension SwinjectStoryboard {
                 controller.configure(baseVM: reg.resolve(LaunchViewModel.self), coordinator: coordinator)
             }
             
-            dependencyRegistry.container.storyboardInitCompleted(ProgressViewController.self) { (reg, controller) in
+            dependencyRegistry.container.storyboardInitCompleted(DashboardViewController.self) { (reg, controller) in
                 let coordinator = dependencyRegistry.makeMainFlowCoordinator(rootViewController: controller)
-                controller.configure(baseVM: reg.resolve(ProgressViewModel.self), coordinator: coordinator)
+                controller.configure(baseVM: reg.resolve(DashboardViewModel.self), coordinator: coordinator)
             }
             
             dependencyRegistry.container.storyboardInitCompleted(TasksViewController.self) { (reg, controller) in

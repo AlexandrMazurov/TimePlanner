@@ -9,9 +9,8 @@
 import UIKit
 
 struct TabBarControllersModel {
-    var progressViewController: ProgressViewController?
+    var dashboardViewController: DashboardViewController?
     var tasksViewController: TasksViewController?
-    var completedTasksViewController: TasksViewController?
     var statisticsViewController: StatisticsViewController?
     var settingsViewController: SettingsViewController?
 }

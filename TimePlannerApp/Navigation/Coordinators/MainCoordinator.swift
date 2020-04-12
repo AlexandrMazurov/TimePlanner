@@ -20,16 +20,7 @@ class MainCoordinator: CoordinatorProtocol {
         self.registry = registry
     }
     
-    func start() {
-        guard let controller = registry.container.resolve(LaunchViewController.self) else {
-            return
-        }
-        controller.configure(baseVM: registry.container.resolve(LaunchViewModel.self), coordinator: self)
-        guard let navigationController = navigationController as? UINavigationController else {
-            return
-        }
-        navigationController.pushViewController(controller, animated: false)
-    }
+    func start() {}
     
     func navigateToMainFlow() {
         guard let child = registry.makeMainFlowCoordinator(rootViewController: navigationController) as? MainFlowCoordinator else {

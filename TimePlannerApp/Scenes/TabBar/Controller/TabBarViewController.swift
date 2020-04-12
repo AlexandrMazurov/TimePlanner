@@ -9,37 +9,25 @@
 import UIKit
 
 class TabBarViewController: BaseTabBarController {
+    
+    private var tabBarViewModel: TabBarViewModel? {
+        return viewModel as? TabBarViewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: Provide DI
-        
-        guard let viewModel = viewModel as? TabBarViewModel else {
-            return
-        }
-        let controllers = viewModel.getTabBarControllers()
-        setupViewControllers(progress: controllers?.progressViewController,
-                             tasks: controllers?.tasksViewController,
-                             completeTask: controllers?.completedTasksViewController,
-                             statistics: controllers?.statisticsViewController,
-                             settings: controllers?.settingsViewController)
-        
     }
     
     
-    func setupViewControllers(progress progressViewController: ProgressViewController?,
+    func setupViewControllers(dashboard dashboardViewController: DashboardViewController?,
                               tasks tasksViewController: TasksViewController?,
-                              completeTask completeTaskViewController: TasksViewController?,
                               statistics statisticsViewController: StatisticsViewController?,
                               settings settingsViewController: SettingsViewController?) {
-        let progress = wrapController(progressViewController,
-                                      title: "Progress",
+        let progress = wrapController(dashboardViewController,
+                                      title: "Dashboard",
                                       image: nil)
         let tasks = wrapController(tasksViewController,
                                      title: "Tasks",
-                                     image: nil)
-        let completeTasks = wrapController(completeTaskViewController,
-                                     title: "Completed",
                                      image: nil)
         let statistics = wrapController(statisticsViewController,
                                      title: "Statistics",
@@ -48,7 +36,13 @@ class TabBarViewController: BaseTabBarController {
                                       title: "Settings",
                                       image: nil)
         
-        viewControllers = [progress, tasks, completeTasks, statistics, settings]
+        viewControllers = [progress, tasks, statistics, settings]
+    }
+    
+    override func createObservers() {
+        guard let viewModel = tabBarViewModel else {
+            return
+        }
     }
     
     private func wrapController(_ controller: UIViewController?,
