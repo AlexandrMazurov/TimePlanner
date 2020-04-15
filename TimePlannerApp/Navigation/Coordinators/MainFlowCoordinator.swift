@@ -31,7 +31,7 @@ class MainFlowCoordinator: CoordinatorProtocol {
                                       tasks: model?.tasksViewController,
                                       statistics: model?.statisticsViewController,
                                       settings: model?.settingsViewController)
-        navigationController.navigationController?.pushViewControllerWithFlipAnimation(viewController: tabBarVC)
+        navigationController.presentWithFlipAnimation(viewController: tabBarVC)
     }
     
     func didFinishFlow() {
