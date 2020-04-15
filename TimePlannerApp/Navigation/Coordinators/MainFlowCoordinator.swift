@@ -12,11 +12,11 @@ class MainFlowCoordinator: CoordinatorProtocol {
 
     weak var parentCoordinator: CoordinatorProtocol?
     var childsCoordinators = [CoordinatorProtocol?]()
-    var navigationController: UIViewController
+    var rootViewController: UIViewController
     private(set) var registry: DependencyRegistry!
     
     init(navigationController: UIViewController, registry: DependencyRegistry) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.registry = registry
     }
     
@@ -31,7 +31,7 @@ class MainFlowCoordinator: CoordinatorProtocol {
                                       tasks: model?.tasksViewController,
                                       statistics: model?.statisticsViewController,
                                       settings: model?.settingsViewController)
-        navigationController.presentWithFlipAnimation(viewController: tabBarVC)
+        rootViewController.presentWithFlipAnimation(viewController: tabBarVC)
     }
     
     func didFinishFlow() {
@@ -40,7 +40,4 @@ class MainFlowCoordinator: CoordinatorProtocol {
         }
         parentCoordinator.childDidFinish(self)
     }
-    
-    
-    
 }

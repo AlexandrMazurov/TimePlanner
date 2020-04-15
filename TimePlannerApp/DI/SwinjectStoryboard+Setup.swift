@@ -58,6 +58,4 @@ extension SwinjectStoryboard {
         
         main()
     }
-    
-
 }

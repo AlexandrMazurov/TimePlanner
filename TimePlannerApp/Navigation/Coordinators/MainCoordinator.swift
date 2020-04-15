@@ -11,19 +11,19 @@ import UIKit
 class MainCoordinator: CoordinatorProtocol {
     
     var childsCoordinators = [CoordinatorProtocol?]()
-    var navigationController: UIViewController
+    var rootViewController: UIViewController
     private(set) weak var registry: DependencyRegistryProtocol!
     
     
     init(navigationController: UIViewController, registry: DependencyRegistryProtocol) {
-        self.navigationController = navigationController
+        self.rootViewController = navigationController
         self.registry = registry
     }
     
     func start() {}
     
     func navigateToMainFlow() {
-        guard let child = registry.makeMainFlowCoordinator(rootViewController: navigationController) as? MainFlowCoordinator else {
+        guard let child = registry.makeMainFlowCoordinator(rootViewController: rootViewController) as? MainFlowCoordinator else {
             return
         }
         child.parentCoordinator = self
@@ -39,5 +39,4 @@ class MainCoordinator: CoordinatorProtocol {
             }
         }
     }
-        
 }

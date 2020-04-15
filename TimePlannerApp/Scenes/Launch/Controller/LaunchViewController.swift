@@ -12,16 +12,13 @@ class LaunchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
+
         guard let coordinator = coordinator as? MainCoordinator else {
             return
         }
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             coordinator.navigateToMainFlow()
         }
-        
     }
-
-
 }
-
