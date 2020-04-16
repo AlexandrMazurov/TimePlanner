@@ -39,12 +39,6 @@ class TabBarViewController: BaseTabBarController {
         viewControllers = [progress, tasks, statistics, settings]
     }
     
-    override func createObservers() {
-        guard let viewModel = tabBarViewModel else {
-            return
-        }
-    }
-    
     private func wrapController(_ controller: UIViewController?,
                                 title: String,
                                 image: UIImage? = nil,
