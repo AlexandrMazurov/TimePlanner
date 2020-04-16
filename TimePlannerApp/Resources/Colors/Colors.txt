@@ -1,0 +1,7 @@
+# application
+button-normal               : 25BEE0
+button-highlited           : 15B2E3
+disabled                   : BECCDC
+errorText                  : FF023F
+errorBackground            : FEEBF0
+textFieldBorderColor       : 92A9C3

@@ -1,0 +1,23 @@
+strings:
+  inputs: TimePlannerApp/Resources/Strings/Base.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: TimePlannerApp/Sources/Generated/LocalizedStrings.swift
+
+xcassets:
+  inputs: TimePlannerApp/Resources/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: TimePlannerApp/Sources/Generated/SharedAssets.swift
+
+colors:
+  inputs: TimePlannerApp/Resources/Colors/Colors.txt
+  outputs:
+    templateName: swift4
+    output: TimePlannerApp/Sources/Generated/Colors.swift
+
+fonts:
+  inputs: TimePlannerApp/Resources/Fonts
+  outputs:
+    templateName: swift4
+    output: TimePlannerApp/Sources/Generated/Fonts.swift

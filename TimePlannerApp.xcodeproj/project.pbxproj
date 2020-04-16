@@ -17,6 +17,13 @@
 		4B19BF4D2443819B006094D0 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF4C2443819B006094D0 /* StatisticsViewModel.swift */; };
 		4B19BF5024438236006094D0 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF4F24438236006094D0 /* DashboardViewModel.swift */; };
 		4B19BF542447A4A9006094D0 /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF532447A4A9006094D0 /* UIViewController+Present.swift */; };
+		4B19BF59244850EC006094D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B19BF5B244850EC006094D0 /* Localizable.strings */; };
+		4B19BF5F244851EA006094D0 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B19BF5E244851EA006094D0 /* swiftgen.yml */; };
+		4B19BF65244853E9006094D0 /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4B19BF64244853E9006094D0 /* Colors.txt */; };
+		4B19BF7224485659006094D0 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF6E24485659006094D0 /* Colors.swift */; };
+		4B19BF7324485659006094D0 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF6F24485659006094D0 /* LocalizedStrings.swift */; };
+		4B19BF7424485659006094D0 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF7024485659006094D0 /* Fonts.swift */; };
+		4B19BF7524485659006094D0 /* SharedAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF7124485659006094D0 /* SharedAssets.swift */; };
 		4B3B176E241EAFC80046533A /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B176D241EAFC80046533A /* SwinjectStoryboard+Setup.swift */; };
 		4B3B1770241EAFDF0046533A /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B176F241EAFDF0046533A /* DependencyRegistry.swift */; };
 		4B3B1775241EB78E0046533A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B1774241EB78E0046533A /* DashboardViewController.swift */; };
@@ -45,15 +52,24 @@
 		1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1F7F6B7023F9871B00D917F8 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		1F7F6B7323F9871B00D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F7F6B7523F9872000D917F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F7F6B7823F9872000D917F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F7F6B7A23F9872000D917F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4B19BF4924438145006094D0 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
 		4B19BF4C2443819B006094D0 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		4B19BF4F24438236006094D0 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		4B19BF532447A4A9006094D0 /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
+		4B19BF5A244850EC006094D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B19BF5C2448515A006094D0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B19BF5E244851EA006094D0 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		4B19BF64244853E9006094D0 /* Colors.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		4B19BF6824485557006094D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B19BF6924485557006094D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B19BF6D24485636006094D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4B19BF6E24485659006094D0 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4B19BF6F24485659006094D0 /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		4B19BF7024485659006094D0 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		4B19BF7124485659006094D0 /* SharedAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedAssets.swift; sourceTree = "<group>"; };
 		4B3B176D241EAFC80046533A /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		4B3B176F241EAFDF0046533A /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		4B3B1774241EB78E0046533A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +107,7 @@
 		1F7F6B6023F9871B00D917F8 = {
 			isa = PBXGroup;
 			children = (
+				4B19BF5E244851EA006094D0 /* swiftgen.yml */,
 				1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */,
 				1F7F6B6A23F9871B00D917F8 /* Products */,
 				2FD8F20DCCFF9D5F9AD88A3E /* Pods */,
@@ -109,6 +126,8 @@
 		1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */ = {
 			isa = PBXGroup;
 			children = (
+				4B19BF612448532F006094D0 /* Sources */,
+				4B19BF5524485091006094D0 /* Resources */,
 				4B3B177C241EBCC00046533A /* Helpers */,
 				4B3B176C241EAFA00046533A /* DI */,
 				4BBCBCF02401B330008A12A8 /* Common */,
@@ -117,7 +136,6 @@
 				1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */,
 				1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */,
 				1F7F6B7223F9871B00D917F8 /* Main.storyboard */,
-				1F7F6B7523F9872000D917F8 /* Assets.xcassets */,
 				1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */,
 				1F7F6B7A23F9872000D917F8 /* Info.plist */,
 			);
@@ -155,6 +173,59 @@
 				4B19BF4F24438236006094D0 /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B19BF5524485091006094D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F7F6B7523F9872000D917F8 /* Assets.xcassets */,
+				4B19BF63244853A4006094D0 /* Fonts */,
+				4B19BF622448539B006094D0 /* Colors */,
+				4B19BF56244850A2006094D0 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4B19BF56244850A2006094D0 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				4B19BF5B244850EC006094D0 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		4B19BF5D24485187006094D0 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4B19BF6E24485659006094D0 /* Colors.swift */,
+				4B19BF7024485659006094D0 /* Fonts.swift */,
+				4B19BF6F24485659006094D0 /* LocalizedStrings.swift */,
+				4B19BF7124485659006094D0 /* SharedAssets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		4B19BF612448532F006094D0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4B19BF5D24485187006094D0 /* Generated */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4B19BF622448539B006094D0 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				4B19BF64244853E9006094D0 /* Colors.txt */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		4B19BF63244853A4006094D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4B3B176C241EAFA00046533A /* DI */ = {
@@ -376,6 +447,7 @@
 			buildConfigurationList = 1F7F6B7D23F9872000D917F8 /* Build configuration list for PBXNativeTarget "TimePlannerApp" */;
 			buildPhases = (
 				B0DAF906F3E4A7682DD2E9BA /* [CP] Check Pods Manifest.lock */,
+				4B19BF602448525D006094D0 /* Swift Gen */,
 				1F7F6B6523F9871B00D917F8 /* Sources */,
 				1F7F6B6623F9871B00D917F8 /* Frameworks */,
 				1F7F6B6723F9871B00D917F8 /* Resources */,
@@ -411,6 +483,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 1F7F6B6023F9871B00D917F8;
@@ -429,6 +502,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */,
+				4B19BF5F244851EA006094D0 /* swiftgen.yml in Resources */,
+				4B19BF65244853E9006094D0 /* Colors.txt in Resources */,
+				4B19BF59244850EC006094D0 /* Localizable.strings in Resources */,
 				1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */,
 				1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */,
 			);
@@ -453,6 +529,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4B19BF602448525D006094D0 /* Swift Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config $SOURCE_ROOT/swiftgen.yml\n";
 		};
 		B0DAF906F3E4A7682DD2E9BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -492,14 +586,18 @@
 				1F7F6B7123F9871B00D917F8 /* LaunchViewController.swift in Sources */,
 				4B3B176E241EAFC80046533A /* SwinjectStoryboard+Setup.swift in Sources */,
 				4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */,
+				4B19BF7424485659006094D0 /* Fonts.swift in Sources */,
 				4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */,
+				4B19BF7224485659006094D0 /* Colors.swift in Sources */,
 				4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */,
+				4B19BF7524485659006094D0 /* SharedAssets.swift in Sources */,
 				4B3C753024025FEA004B584E /* MainFlowCoordinator.swift in Sources */,
 				4BBCBCF62401B85B008A12A8 /* MainCoordinator.swift in Sources */,
 				1F7F6B6D23F9871B00D917F8 /* AppDelegate.swift in Sources */,
 				4B3B1782241EC0E50046533A /* TabBarViewModel.swift in Sources */,
 				4B3B1784241EC3230046533A /* BaseTabBarController.swift in Sources */,
 				1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */,
+				4B19BF7324485659006094D0 /* LocalizedStrings.swift in Sources */,
 				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
@@ -518,7 +616,7 @@
 		1F7F6B7223F9871B00D917F8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1F7F6B7323F9871B00D917F8 /* Base */,
+				4B19BF6824485557006094D0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -526,9 +624,19 @@
 		1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1F7F6B7823F9872000D917F8 /* Base */,
+				4B19BF6924485557006094D0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4B19BF5B244850EC006094D0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B19BF5A244850EC006094D0 /* en */,
+				4B19BF5C2448515A006094D0 /* ru */,
+				4B19BF6D24485636006094D0 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -538,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -598,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
