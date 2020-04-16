@@ -16,6 +16,7 @@ target 'TimePlannerApp' do
     pod 'RxViewController'
     pod 'RxGesture'
     pod 'RxKeyboard'
+    pod 'SwiftGen'
 
   # local database
     pod 'RealmSwift'

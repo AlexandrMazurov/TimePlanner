@@ -22,6 +22,7 @@ PODS:
   - RxViewController (1.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - SwiftGen (6.1.0)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift
   - RxViewController
+  - SwiftGen
   - Swinject (~> 2.6.2)
   - SwinjectStoryboard
 
@@ -48,6 +50,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - RxViewController
+    - SwiftGen
     - Swinject
     - SwinjectStoryboard
 
@@ -61,9 +64,10 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 67231270326616c61b39fcd0022a37b912add284
+PODFILE CHECKSUM: f5a65c804f947f6011eab9a37407dc5e1246ce47
 
 COCOAPODS: 1.8.4
