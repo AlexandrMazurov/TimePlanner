@@ -12,7 +12,7 @@ import Swinject
 protocol DependencyRegistryProtocol: AnyObject {
     var container: Container { get }
     var navigationCoordinator: CoordinatorProtocol! { get }
-    
+
     func makeMainCoordinator(rootViewController: UIViewController) -> CoordinatorProtocol
     func makeMainFlowCoordinator(rootViewController: UIViewController) -> CoordinatorProtocol
 }
@@ -21,24 +21,24 @@ class DependencyRegistry: DependencyRegistryProtocol {
 
     var container: Container
     var navigationCoordinator: CoordinatorProtocol!
-    
+
     init(container: Container) {
         self.container = container
         registerDependencies()
         registerViewModels()
         registerViewControllers()
     }
-    
+
     private func registerDependencies() {
-        
+
         container.register(MainCoordinator.self) { (_, rootViewController: UIViewController) in
             return MainCoordinator(navigationController: rootViewController, registry: self)
         }
-        
+
         container.register(MainFlowCoordinator.self) { (_, rootViewController: UIViewController) in
             return MainFlowCoordinator(navigationController: rootViewController, registry: self)
         }
-        
+
         container.register(TabBarControllersModel.self) {
             TabBarControllersModel(dashboardViewController: $0.resolve(DashboardViewController.self),
                                    tasksViewController: $0.resolve(TasksViewController.self),
@@ -46,35 +46,35 @@ class DependencyRegistry: DependencyRegistryProtocol {
                                    settingsViewController: $0.resolve(SettingsViewController.self))
         }
     }
-    
+
     private func registerViewModels() {
         container.register(TabBarViewModel.self) { _ in
             TabBarViewModel()
         }
-        
+
         container.register(LaunchViewModel.self) { _ in
             LaunchViewModel()
         }
-        
+
         container.register(DashboardViewModel.self) { _ in
             DashboardViewModel()
         }
-        
+
         container.register(TasksViewModel.self) { _ in
             TasksViewModel()
         }
-        
+
         container.register(StatisticsViewModel.self) { _ in
             StatisticsViewModel()
         }
-        
+
         container.register(SettingsViewModel.self.self) { _ in
             SettingsViewModel()
         }
     }
-    
+
     private func registerViewControllers() {
-        
+
         container.register(TabBarViewController.self) { _ in
             TabBarViewController()
         }
@@ -82,34 +82,33 @@ class DependencyRegistry: DependencyRegistryProtocol {
         container.register(LaunchViewController.self) { _ in
             LaunchViewController.instantiate(from: .main)
         }
-        
+
         container.register(DashboardViewController.self) { _ in
             DashboardViewController.instantiate(from: .main)
         }
-        
+
         container.register(TasksViewController.self) { _ in
             TasksViewController.instantiate(from: .main)
         }
-        
+
         container.register(StatisticsViewController.self) { _ in
             StatisticsViewController.instantiate(from: .main)
         }
-        
+
         container.register(SettingsViewController.self) { _ in
             SettingsViewController.instantiate(from: .main)
         }
-        
-        
+
     }
-    
+
     func makeMainCoordinator(rootViewController: UIViewController) -> CoordinatorProtocol {
         navigationCoordinator = container.resolve(MainCoordinator.self, argument: rootViewController)
         return navigationCoordinator
     }
-    
+
     func makeMainFlowCoordinator(rootViewController: UIViewController) -> CoordinatorProtocol {
         navigationCoordinator = container.resolve(MainFlowCoordinator.self, argument: rootViewController)
         return navigationCoordinator
     }
-    
+
 }

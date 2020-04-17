@@ -9,7 +9,7 @@
 import UIKit
 
 class TabBarViewController: BaseTabBarController {
-    
+
     private var tabBarViewModel: TabBarViewModel? {
         return viewModel as? TabBarViewModel
     }
@@ -17,8 +17,7 @@ class TabBarViewController: BaseTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
+
     func setupViewControllers(dashboard dashboardViewController: DashboardViewController?,
                               tasks tasksViewController: TasksViewController?,
                               statistics statisticsViewController: StatisticsViewController?,
@@ -35,10 +34,10 @@ class TabBarViewController: BaseTabBarController {
         let settings = wrapController(settingsViewController,
                                       title: "Settings",
                                       image: nil)
-        
+
         viewControllers = [progress, tasks, statistics, settings]
     }
-    
+
     private func wrapController(_ controller: UIViewController?,
                                 title: String,
                                 image: UIImage? = nil,

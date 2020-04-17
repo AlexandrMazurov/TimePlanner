@@ -9,5 +9,5 @@
 import Foundation
 
 class TasksViewModel: BaseViewModel {
-    
+
 }

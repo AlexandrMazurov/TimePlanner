@@ -1,0 +1,5 @@
+excluded:
+    - Carthage
+    - Pods
+    - TimePlannerApp/SceneDelegate.swift
+    - TimePlannerApp/AppDelegate.swift

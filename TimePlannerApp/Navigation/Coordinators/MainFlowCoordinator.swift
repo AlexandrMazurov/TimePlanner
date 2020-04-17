@@ -14,12 +14,12 @@ class MainFlowCoordinator: CoordinatorProtocol {
     var childsCoordinators = [CoordinatorProtocol?]()
     var rootViewController: UIViewController
     private(set) var registry: DependencyRegistry!
-    
+
     init(navigationController: UIViewController, registry: DependencyRegistry) {
         self.rootViewController = navigationController
         self.registry = registry
     }
-    
+
     func start() {
         guard let tabBarVC = registry.container.resolve(TabBarViewController.self) else {
             return
@@ -32,7 +32,7 @@ class MainFlowCoordinator: CoordinatorProtocol {
                                       settings: model?.settingsViewController)
         rootViewController.presentWithFlipAnimation(viewController: tabBarVC)
     }
-    
+
     func didFinishFlow() {
         guard let parentCoordinator = parentCoordinator as? MainCoordinator else {
             return
