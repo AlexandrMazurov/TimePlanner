@@ -13,17 +13,17 @@ class BaseViewController: UIViewController {
     private(set) var rxBag = DisposeBag()
     private(set) var viewModel: BaseViewModel?
     private(set) weak var coordinator: CoordinatorProtocol?
-    
+
     func configure(baseVM: BaseViewModel?, coordinator: CoordinatorProtocol) {
         self.viewModel = baseVM
         self.coordinator = coordinator
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createObservers()
     }
-    
+
     internal func createObservers() {}
-    
+
 }

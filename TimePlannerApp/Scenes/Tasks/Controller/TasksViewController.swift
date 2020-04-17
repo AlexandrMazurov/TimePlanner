@@ -13,10 +13,10 @@ class TasksViewController: BaseViewController {
     private var tasksViewModel: TasksViewModel? {
         return viewModel as? TasksViewModel
     }
-    
+
     override func createObservers() {
         super.createObservers()
-        
+
         guard let viewModel = tasksViewModel
         else {
             return

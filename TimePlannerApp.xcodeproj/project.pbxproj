@@ -13,6 +13,7 @@
 		1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7223F9871B00D917F8 /* Main.storyboard */; };
 		1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7523F9872000D917F8 /* Assets.xcassets */; };
 		1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7F6B7723F9872000D917F8 /* LaunchScreen.storyboard */; };
+		4B035C12244A381E00352A20 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4B035C11244A381E00352A20 /* .swiftlint.yml */; };
 		4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF4924438145006094D0 /* TasksViewModel.swift */; };
 		4B19BF4D2443819B006094D0 /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF4C2443819B006094D0 /* StatisticsViewModel.swift */; };
 		4B19BF5024438236006094D0 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19BF4F24438236006094D0 /* DashboardViewModel.swift */; };
@@ -55,6 +56,7 @@
 		1F7F6B7523F9872000D917F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F7F6B7A23F9872000D917F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33F5312F73CE7E605C1AC161 /* Pods-TimePlannerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.debug.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4B035C11244A381E00352A20 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		4B19BF4924438145006094D0 /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
 		4B19BF4C2443819B006094D0 /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		4B19BF4F24438236006094D0 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		1F7F6B6023F9871B00D917F8 = {
 			isa = PBXGroup;
 			children = (
+				4B035C11244A381E00352A20 /* .swiftlint.yml */,
 				4B19BF5E244851EA006094D0 /* swiftgen.yml */,
 				1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */,
 				1F7F6B6A23F9871B00D917F8 /* Products */,
@@ -451,6 +454,7 @@
 				1F7F6B6523F9871B00D917F8 /* Sources */,
 				1F7F6B6623F9871B00D917F8 /* Frameworks */,
 				1F7F6B6723F9871B00D917F8 /* Resources */,
+				4B035C10244A35BE00352A20 /* SwiftLint */,
 				2BDFDA584F1B0295B9531A48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -504,6 +508,7 @@
 				1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */,
 				4B19BF5F244851EA006094D0 /* swiftgen.yml in Resources */,
 				4B19BF65244853E9006094D0 /* Colors.txt in Resources */,
+				4B035C12244A381E00352A20 /* .swiftlint.yml in Resources */,
 				4B19BF59244850EC006094D0 /* Localizable.strings in Resources */,
 				1F7F6B7623F9872000D917F8 /* Assets.xcassets in Resources */,
 				1F7F6B7423F9871B00D917F8 /* Main.storyboard in Resources */,
@@ -529,6 +534,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4B035C10244A35BE00352A20 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		4B19BF602448525D006094D0 /* Swift Gen */ = {
 			isa = PBXShellScriptBuildPhase;
