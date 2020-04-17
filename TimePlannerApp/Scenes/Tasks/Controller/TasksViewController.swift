@@ -10,8 +10,18 @@ import UIKit
 
 class TasksViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private var tasksViewModel: TasksViewModel? {
+        return viewModel as? TasksViewModel
+    }
+    
+    override func createObservers() {
+        super.createObservers()
+        
+        guard let viewModel = tasksViewModel
+        else {
+            return
+        }
+        print(viewModel as Any)
     }
 
 }
