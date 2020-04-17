@@ -21,7 +21,6 @@ class MainFlowCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        //start with tabBar
         guard let tabBarVC = registry.container.resolve(TabBarViewController.self) else {
             return
         }
