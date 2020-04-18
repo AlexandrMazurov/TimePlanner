@@ -18,7 +18,7 @@ class Task: Object {
 
     let priority = RealmOptional<Int>()
     let rating = RealmOptional<Int>()
-    let isVompleted = RealmOptional<Bool>()
+    let isCompleted = RealmOptional<Bool>()
 
     override class func primaryKey() -> String? {
         return "id"
