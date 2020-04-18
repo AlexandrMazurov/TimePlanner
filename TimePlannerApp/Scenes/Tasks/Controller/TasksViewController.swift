@@ -17,8 +17,6 @@ class TasksViewController: BaseViewController {
 
     @IBOutlet weak var tasksTableView: UITableView!
 
-    private let testArray = Observable.just([1, 5, 7, 6])
-
     private var tasksViewModel: TasksViewModel? {
         return viewModel as? TasksViewModel
     }
@@ -30,14 +28,11 @@ class TasksViewController: BaseViewController {
         else {
             return
         }
-        print(viewModel as Any)
 
         tasksTableView
             .rx
             .setDelegate(self)
             .disposed(by: rxBag)
-
-        tasksTableView.bounces = false
 
         tasksTableView
             .register(UINib(nibName: TaskCell.reuseIdentifier, bundle: Bundle.main),
