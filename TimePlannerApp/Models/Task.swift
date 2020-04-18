@@ -15,8 +15,10 @@ class Task: Object {
     @objc dynamic var taskDescription: String?
     @objc dynamic var startTime: Date?
     @objc dynamic var endTime: Date?
+
     let priority = RealmOptional<Int>()
     let rating = RealmOptional<Int>()
+    let isVompleted = RealmOptional<Bool>()
 
     override class func primaryKey() -> String? {
         return "id"
