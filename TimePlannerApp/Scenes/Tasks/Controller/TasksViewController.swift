@@ -6,10 +6,13 @@
 //  Copyright © 2020 AlexandrMazurov. All rights reserved.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
 class TasksViewController: BaseViewController {
-
+    
+    @IBOutlet weak var tasksTableView: UITableView!
+    
     private var tasksViewModel: TasksViewModel? {
         return viewModel as? TasksViewModel
     }

@@ -46,21 +46,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-NV-DJf">
-                                <rect key="frame" x="186" y="438" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-K1-wr4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jKu-K1-wr4" firstAttribute="top" secondItem="Rex-wL-H15" secondAttribute="top" id="0VF-0e-WjD"/>
+                            <constraint firstAttribute="bottom" secondItem="jKu-K1-wr4" secondAttribute="bottom" id="3Pe-6L-R6e"/>
+                            <constraint firstItem="jKu-K1-wr4" firstAttribute="trailing" secondItem="Rex-wL-H15" secondAttribute="trailing" id="6R6-kT-E7M"/>
+                            <constraint firstItem="jKu-K1-wr4" firstAttribute="leading" secondItem="Rex-wL-H15" secondAttribute="leading" id="X4v-59-AX5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rex-wL-H15"/>
                     </view>
+                    <connections>
+                        <outlet property="tasksTableView" destination="jKu-K1-wr4" id="hQZ-xD-wOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H01-25-5lV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="96"/>
+            <point key="canvasLocation" x="2105.7971014492755" y="95.758928571428569"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="CVt-EM-Q0N">
