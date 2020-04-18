@@ -10,4 +10,9 @@ import Foundation
 
 class TasksViewModel: BaseViewModel {
 
+    weak var repository: RepositoryProtocol?
+
+    init(repository: RepositoryProtocol?) {
+        self.repository = repository
+    }
 }

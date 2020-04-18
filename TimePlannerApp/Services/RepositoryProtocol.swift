@@ -10,7 +10,7 @@ import RealmSwift
 
 // swiftlint:disable identifier_name
 
-protocol RepositoryProtocol {
+protocol RepositoryProtocol: class {
     func addTask(_ task: Task)
     func updateTask(_ task: Task)
     func getTask(with id: String) -> Task?
