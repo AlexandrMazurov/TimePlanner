@@ -49,6 +49,7 @@
 		4BFC60C8244AFB0400081946 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60C7244AFB0400081946 /* ReusableView.swift */; };
 		4BFC60CC244B727800081946 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60CB244B727800081946 /* RepositoryProtocol.swift */; };
 		4BFC60CF244B72D900081946 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60CE244B72D900081946 /* Task.swift */; };
+		4BFC60D1244B776200081946 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60D0244B776200081946 /* LocalRepository.swift */; };
 		562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		4BFC60C7244AFB0400081946 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		4BFC60CB244B727800081946 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		4BFC60CE244B72D900081946 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4BFC60D0244B776200081946 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.release.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -469,6 +471,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFC60CB244B727800081946 /* RepositoryProtocol.swift */,
+				4BFC60D0244B776200081946 /* LocalRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				4B3B1784241EC3230046533A /* BaseTabBarController.swift in Sources */,
 				1F7F6B6F23F9871B00D917F8 /* SceneDelegate.swift in Sources */,
 				4B19BF7324485659006094D0 /* LocalizedStrings.swift in Sources */,
+				4BFC60D1244B776200081946 /* LocalRepository.swift in Sources */,
 				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,

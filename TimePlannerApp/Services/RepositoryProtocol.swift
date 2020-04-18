@@ -6,8 +6,15 @@
 //  Copyright © 2020 AlexandrMazurov. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+// swiftlint:disable identifier_name
 
 protocol RepositoryProtocol {
-    
+    func addTask(_ task: Task)
+    func updateTask(_ task: Task)
+    func getTask(with id: String) -> Task?
+    func getAllTasks() -> [Task]
+    func deletTask(_ task: Task)
+    func deleteAllTasks()
 }

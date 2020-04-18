@@ -9,7 +9,7 @@
 import RealmSwift
 
 class Task: Object {
-    
+    // swiftlint:disable identifier_name
     @objc dynamic var id: String?
     @objc dynamic var title: String?
     @objc dynamic var taskDescription: String?
@@ -17,7 +17,7 @@ class Task: Object {
     @objc dynamic var endTime: Date?
     let priority = RealmOptional<Int>()
     let rating = RealmOptional<Int>()
-    
+
     override class func primaryKey() -> String? {
         return "id"
     }
