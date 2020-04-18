@@ -24,9 +24,9 @@ class TasksViewModel: BaseViewModel {
     }
 
     override func createObservers() {
-        
+
     }
-    
+
     private func setupTasksModels() {
         guard let allTasks = repository?.getAllTasks() else {
             return
