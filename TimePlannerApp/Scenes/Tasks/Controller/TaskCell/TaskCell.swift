@@ -20,7 +20,7 @@ class TaskCell: UITableViewCell, ReusableView {
 
     }
 
-    func configure(with task: Int) {
+    func configure(with task: Task) {
 
     }
 

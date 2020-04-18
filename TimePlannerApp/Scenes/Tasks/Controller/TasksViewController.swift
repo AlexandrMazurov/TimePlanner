@@ -43,12 +43,12 @@ class TasksViewController: BaseViewController {
             .register(UINib(nibName: TaskCell.reuseIdentifier, bundle: Bundle.main),
                       forCellReuseIdentifier: TaskCell.reuseIdentifier)
 
-        testArray
+        viewModel.tasks
             .bind(to: tasksTableView
                 .rx
                 .items(cellIdentifier: TaskCell.reuseIdentifier,
-                       cellType: TaskCell.self)) { row, model, cell in
-                        cell.configure(with: model)
+                       cellType: TaskCell.self)) { row, task, cell in
+                        cell.configure(with: task)
                         print(row)
             }
         .disposed(by: rxBag)
