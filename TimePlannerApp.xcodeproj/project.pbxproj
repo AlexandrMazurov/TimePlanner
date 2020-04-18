@@ -47,6 +47,8 @@
 		4BFC60C2244AF3DE00081946 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFC60C1244AF3DE00081946 /* TaskCell.xib */; };
 		4BFC60C4244AF3FD00081946 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60C3244AF3FD00081946 /* TaskCell.swift */; };
 		4BFC60C8244AFB0400081946 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60C7244AFB0400081946 /* ReusableView.swift */; };
+		4BFC60CC244B727800081946 /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60CB244B727800081946 /* RepositoryProtocol.swift */; };
+		4BFC60CF244B72D900081946 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC60CE244B72D900081946 /* Task.swift */; };
 		562E78E24A20DD59B16F8B52 /* Pods_TimePlannerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDFDD9768562776B6A31876 /* Pods_TimePlannerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		4BFC60C1244AF3DE00081946 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
 		4BFC60C3244AF3FD00081946 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		4BFC60C7244AFB0400081946 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		4BFC60CB244B727800081946 /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
+		4BFC60CE244B72D900081946 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		6B5C02821F72B12FFCFFA78D /* Pods-TimePlannerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimePlannerApp.release.xcconfig"; path = "Target Support Files/Pods-TimePlannerApp/Pods-TimePlannerApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,12 +139,14 @@
 		1F7F6B6B23F9871B00D917F8 /* TimePlannerApp */ = {
 			isa = PBXGroup;
 			children = (
-				4B19BF612448532F006094D0 /* Sources */,
 				4B19BF5524485091006094D0 /* Resources */,
+				4B19BF612448532F006094D0 /* Sources */,
 				4B3B177C241EBCC00046533A /* Helpers */,
-				4B3B176C241EAFA00046533A /* DI */,
 				4BBCBCF02401B330008A12A8 /* Common */,
 				4BBCBCDE2401A93C008A12A8 /* Navigation */,
+				4B3B176C241EAFA00046533A /* DI */,
+				4BFC60CD244B729A00081946 /* Models */,
+				4BFC60CA244B721300081946 /* Services */,
 				4BBCBCDD2401A937008A12A8 /* Scenes */,
 				1F7F6B6C23F9871B00D917F8 /* AppDelegate.swift */,
 				1F7F6B6E23F9871B00D917F8 /* SceneDelegate.swift */,
@@ -459,6 +465,22 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		4BFC60CA244B721300081946 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4BFC60CB244B727800081946 /* RepositoryProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4BFC60CD244B729A00081946 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BFC60CE244B72D900081946 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		72CFCAA0E1F91B42A6BE78D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,11 +674,13 @@
 				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
+				4BFC60CC244B727800081946 /* RepositoryProtocol.swift in Sources */,
 				4B3B1775241EB78E0046533A /* DashboardViewController.swift in Sources */,
 				4B3C75332402C528004B584E /* TabBarViewController.swift in Sources */,
 				4B19BF542447A4A9006094D0 /* UIViewController+Present.swift in Sources */,
 				4B19BF5024438236006094D0 /* DashboardViewModel.swift in Sources */,
 				4B19BF4D2443819B006094D0 /* StatisticsViewModel.swift in Sources */,
+				4BFC60CF244B72D900081946 /* Task.swift in Sources */,
 				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
