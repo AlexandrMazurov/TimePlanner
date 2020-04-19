@@ -18,7 +18,6 @@ class Task: Object {
 
     let priority = RealmOptional<Int>()
     let rating = RealmOptional<Int>()
-    let isCompleted = RealmOptional<Bool>()
 
     override class func primaryKey() -> String? {
         return "id"
@@ -32,8 +31,7 @@ extension Task {
          taskDescription: String,
          startTime: Date,
          endTime: Date,
-         priority: Int,
-         rating: Int?) {
+         priority: Int) {
         self.init()
         self.id = id
         self.title = title
@@ -41,6 +39,19 @@ extension Task {
         self.startTime = startTime
         self.endTime = endTime
         self.priority.value = priority
-        self.rating.value = rating
+    }
+}
+
+extension Task {
+
+    var isCompleted: Bool {
+        guard let endTime = endTime else {
+            return false
+        }
+        return endTime < Date()
+    }
+
+    var isRating: Bool {
+        rating.value != nil
     }
 }
