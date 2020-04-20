@@ -11,7 +11,7 @@ import RxCocoa
 
 public enum TaskViewType {
     case completed(rating: TaskScoreRating)
-    case performed(time: String)
+    case performed(timeBeforeEnding: String)
     case awaitingCompletion(timeBeforeStarting: String)
 }
 
@@ -25,14 +25,19 @@ public enum TaskScoreRating {
 
 typealias TaskPriority = TaskScoreRating
 
-class TaskViewdata {
+class TaskViewData {
 
     let title: String
+    let description: String
     let priority: TaskPriority?
     var type: TaskViewType
 
-    init(title: String, priority: TaskPriority?, type: TaskViewType) {
+    init(title: String,
+         description: String,
+         priority: TaskPriority?,
+         type: TaskViewType) {
         self.title = title
+        self.description = description
         self.priority = priority
         self.type = type
     }

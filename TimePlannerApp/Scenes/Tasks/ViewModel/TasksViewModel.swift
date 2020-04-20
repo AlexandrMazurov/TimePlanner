@@ -12,7 +12,7 @@ import RxCocoa
 class TasksViewModel: BaseViewModel {
 
     weak var repository: RepositoryProtocol?
-    let tasks = BehaviorRelay<[Task]>(value: [])
+    let tasks = BehaviorRelay<[TaskViewData]>(value: [])
 
     init(repository: RepositoryProtocol?) {
         self.repository = repository
@@ -31,6 +31,14 @@ class TasksViewModel: BaseViewModel {
         guard let allTasks = repository?.getAllTasks() else {
             return
         }
-        tasks.accept(allTasks)
+        tasks
+            .accept(allTasks
+                .compactMap { TaskViewData(
+                    title: $0.title ?? "",
+                    description: $0.taskDescription ?? "",
+                    priority: TaskPriority.high,
+                    type: TaskViewType.performed(timeBeforeEnding: Date().timeWithDefaultFormat())
+                    )
+            })
     }
 }

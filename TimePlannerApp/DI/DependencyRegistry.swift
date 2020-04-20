@@ -32,11 +32,11 @@ class DependencyRegistry: DependencyRegistryProtocol {
     private func registerDependencies() {
 
         container.register(MainCoordinator.self) { (_, rootViewController: UIViewController) in
-            return MainCoordinator(navigationController: rootViewController, registry: self)
+            MainCoordinator(navigationController: rootViewController, registry: self)
         }
 
         container.register(MainFlowCoordinator.self) { (_, rootViewController: UIViewController) in
-            return MainFlowCoordinator(navigationController: rootViewController, registry: self)
+            MainFlowCoordinator(navigationController: rootViewController, registry: self)
         }
 
         container.register(TabBarControllersModel.self) {
@@ -47,7 +47,7 @@ class DependencyRegistry: DependencyRegistryProtocol {
         }
         container.register(LocalRepository.self) { _ in
             LocalRepository()
-        }
+        }.inObjectScope(.container)
     }
 
     private func registerViewModels() {
