@@ -38,6 +38,8 @@
 		4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C753F2402CC06004B584E /* StatisticsViewController.swift */; };
 		4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75412402CC24004B584E /* SettingsViewController.swift */; };
 		4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9342BB242128230013F520 /* TabBarControllersModel.swift */; };
+		4BAE9EE5244E208300827FF2 /* TaskViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE4244E208300827FF2 /* TaskViewData.swift */; };
+		4BAE9EE7244E242500827FF2 /* Date+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE6244E242500827FF2 /* Date+Time.swift */; };
 		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
 		4BBCBCEC2401B076008A12A8 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */; };
 		4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */; };
@@ -91,6 +93,8 @@
 		4B3C753F2402CC06004B584E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		4B3C75412402CC24004B584E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B9342BB242128230013F520 /* TabBarControllersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllersModel.swift; sourceTree = "<group>"; };
+		4BAE9EE4244E208300827FF2 /* TaskViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewData.swift; sourceTree = "<group>"; };
+		4BAE9EE6244E242500827FF2 /* Date+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Time.swift"; sourceTree = "<group>"; };
 		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		4BBCBCEB2401B076008A12A8 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		4BBCBCEE2401B223008A12A8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				4B19BF4924438145006094D0 /* TasksViewModel.swift */,
+				4BAE9EE4244E208300827FF2 /* TaskViewData.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				4B19BF532447A4A9006094D0 /* UIViewController+Present.swift */,
+				4BAE9EE6244E242500827FF2 /* Date+Time.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3B1780241EBF330046533A /* SettingsViewModel.swift in Sources */,
+				4BAE9EE5244E208300827FF2 /* TaskViewData.swift in Sources */,
 				4BBCBCF22401B34D008A12A8 /* AppConstans.swift in Sources */,
 				4B3C75382402CB3A004B584E /* TasksViewController.swift in Sources */,
 				4B3B1770241EAFDF0046533A /* DependencyRegistry.swift in Sources */,
@@ -685,6 +692,7 @@
 				4BFC60D1244B776200081946 /* LocalRepository.swift in Sources */,
 				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */,
+				4BAE9EE7244E242500827FF2 /* Date+Time.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
 				4BFC60CC244B727800081946 /* RepositoryProtocol.swift in Sources */,
 				4B3B1775241EB78E0046533A /* DashboardViewController.swift in Sources */,
