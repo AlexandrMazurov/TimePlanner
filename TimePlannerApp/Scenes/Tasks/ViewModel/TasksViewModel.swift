@@ -19,26 +19,23 @@ class TasksViewModel: BaseViewModel {
     }
 
     override func setup() {
-        super.setup()
         setupTasksModels()
+        super.setup()
     }
 
     override func createObservers() {
-
+        print("Test")
     }
 
     private func setupTasksModels() {
         guard let allTasks = repository?.getAllTasks() else {
             return
         }
-        tasks
-            .accept(allTasks
-                .compactMap { TaskViewData(
-                    title: $0.title ?? "",
-                    description: $0.taskDescription ?? "",
-                    priority: TaskPriority.high,
-                    type: TaskViewType.performed(timeBeforeEnding: Date().timeWithDefaultFormat())
-                    )
+        tasks.accept(allTasks.compactMap {
+            TaskViewData(title: $0.title ?? "",
+                         description: $0.taskDescription ?? "",
+                         priority: TaskPriority.high,
+                         type: TaskViewType.performed(timeBeforeEnding: Date().timeWithDefaultFormat()))
             })
     }
 }
