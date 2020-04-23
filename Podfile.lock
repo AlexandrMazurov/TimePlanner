@@ -16,6 +16,9 @@ PODS:
   - RxOptional (4.1.0):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
+  - RxRealm (2.0.0):
+    - RealmSwift (~> 4.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
@@ -34,6 +37,7 @@ DEPENDENCIES:
   - RxGesture
   - RxKeyboard
   - RxOptional
+  - RxRealm
   - RxSwift
   - RxViewController
   - SwiftGen
@@ -49,6 +53,7 @@ SPEC REPOS:
     - RxGesture
     - RxKeyboard
     - RxOptional
+    - RxRealm
     - RxRelay
     - RxSwift
     - RxViewController
@@ -64,6 +69,7 @@ SPEC CHECKSUMS:
   RxGesture: a3f8dd6adf078110ed5e1c9c30d09d705a09852e
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
@@ -72,6 +78,6 @@ SPEC CHECKSUMS:
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 6ff94a9e36d02ba9af1ee63af7b48571083d0813
+PODFILE CHECKSUM: b6403ce6a71fd121df07bff56fc87e734e006080
 
 COCOAPODS: 1.8.4

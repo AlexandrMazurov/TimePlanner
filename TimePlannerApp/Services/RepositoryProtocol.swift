@@ -7,14 +7,13 @@
 //
 
 import RealmSwift
-
-// swiftlint:disable identifier_name
+import RxCocoa
 
 protocol RepositoryProtocol: class {
+
+    var tasks: BehaviorRelay<[Task]?> { get }
     func addTask(_ task: Task)
     func updateTask(_ task: Task)
-    func getTask(with id: String) -> Task?
-    func getAllTasks() -> [Task]
-    func deletTask(_ task: Task)
+    func deleteTask(_ task: Task)
     func deleteAllTasks()
 }

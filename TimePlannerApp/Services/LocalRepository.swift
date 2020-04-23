@@ -7,8 +7,29 @@
 //
 
 import RealmSwift
+import RxCocoa
+import RxSwift
+import RxRealm
 
 class LocalRepository: RepositoryProtocol {
+
+    let rxBag = DisposeBag()
+    let tasks = BehaviorRelay<[Task]?>(value: nil)
+
+    init() {
+        createObservers()
+    }
+
+    private func createObservers() {
+        guard let tasks = realm?.objects(Task.self) else {
+            return
+        }
+
+        Observable
+            .array(from: tasks)
+            .bind(to: self.tasks)
+            .disposed(by: rxBag)
+    }
 
     func addTask(_ task: Task) {
         write(task)
@@ -17,22 +38,8 @@ class LocalRepository: RepositoryProtocol {
     func updateTask(_ task: Task) {
         write(task, shouldUpdate: true)
     }
-    // swiftlint:disable identifier_name
-    func getTask(with id: String) -> Task? {
-        guard let tasks = realm?.objects(Task.self) else {
-            return nil
-        }
-        return tasks.filter { $0.id == id }.first
-    }
 
-    func getAllTasks() -> [Task] {
-        guard let tasks = realm?.objects(Task.self) else {
-            return []
-        }
-        return tasks.toArray()
-    }
-
-    func deletTask(_ task: Task) {
+    func deleteTask(_ task: Task) {
         delete(task)
     }
 
