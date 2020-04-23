@@ -38,7 +38,7 @@ class TasksViewController: BaseViewController {
             .register(UINib(nibName: TaskCell.reuseIdentifier, bundle: Bundle.main),
                       forCellReuseIdentifier: TaskCell.reuseIdentifier)
 
-        viewModel.tasks
+        viewModel.tasksViewData
             .bind(to: tasksTableView
                 .rx
                 .items(cellIdentifier: TaskCell.reuseIdentifier,
