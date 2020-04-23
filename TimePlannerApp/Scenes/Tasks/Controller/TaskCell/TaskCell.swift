@@ -25,13 +25,16 @@ class TaskCell: UITableViewCell, ReusableView {
 
         switch task.type {
         case .completed(let rating):
-            print(rating)
+            notificationLabel.text = "Completed"
+            timeLabel.text = String(describing: rating)
         case .performed(let timeBeforeEnding):
             notificationLabel.text = "Before ending:"
             timeLabel.text = timeBeforeEnding
         case .awaitingCompletion(let timeBeforeStarting):
             notificationLabel.text = "Before starting:"
             timeLabel.text = timeBeforeStarting
+        case .none:
+            print("None")
         }
     }
 }
