@@ -13,8 +13,8 @@ import RxRealm
 
 class LocalRepository: RepositoryProtocol {
 
-    let rxBag = DisposeBag()
     let tasks = BehaviorRelay<[Task]?>(value: nil)
+    private let rxBag = DisposeBag()
 
     init() {
         createObservers()

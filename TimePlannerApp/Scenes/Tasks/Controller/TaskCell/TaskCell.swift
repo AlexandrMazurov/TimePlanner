@@ -10,11 +10,11 @@ import UIKit
 
 class TaskCell: UITableViewCell, ReusableView {
 
-    @IBOutlet weak var priorityView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var notificationLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var priorityView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var notificationLabel: UILabel!
+    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
 
     func configure(with task: TaskViewData) {
         descriptionLabel.numberOfLines = .max

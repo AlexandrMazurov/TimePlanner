@@ -15,7 +15,7 @@ class TasksViewController: BaseViewController {
         static let taskCellHeight: CGFloat = 150
     }
 
-    @IBOutlet weak var tasksTableView: UITableView!
+    @IBOutlet private weak var tasksTableView: UITableView!
 
     private var tasksViewModel: TasksViewModel? {
         return viewModel as? TasksViewModel
@@ -48,7 +48,6 @@ class TasksViewController: BaseViewController {
             }
         .disposed(by: rxBag)
     }
-
 }
 
 extension TasksViewController: UITableViewDelegate {
