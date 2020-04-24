@@ -8,13 +8,29 @@
 
 import UIKit
 
+private enum ExecutingTaskViewType {
+    case time
+    case procentage
+}
+
 class TaskCell: UITableViewCell, ReusableView {
 
     @IBOutlet private weak var priorityView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var notificationLabel: UILabel!
-    @IBOutlet private weak var timeLabel: UILabel!
+    @IBOutlet private weak var executingButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
+
+    private var executingType: ExecutingTaskViewType = .procentage
+
+    @IBAction func executingButtonTapped(_ sender: UIButton) {
+        switch executingType {
+        case .time:
+            executingType = .procentage
+        case .procentage:
+            executingType = .time
+        }
+    }
 
     func configure(with task: TaskViewData) {
         descriptionLabel.numberOfLines = .max
@@ -26,13 +42,18 @@ class TaskCell: UITableViewCell, ReusableView {
         switch task.type {
         case .completed(let rating):
             notificationLabel.text = "Completed"
-            timeLabel.text = String(describing: rating)
-        case .performed(let timeBeforeEnding):
+            executingButton.setTitle(String(describing: rating), for: .normal)
+        case .performed(let data):
+            switch executingType {
+            case .time:
+                executingButton.setTitle(data.timeBeforeEnding, for: .normal)
+            case .procentage:
+                executingButton.setTitle("\(data.procentage.description)%", for: .normal)
+            }
             notificationLabel.text = "Before ending:"
-            timeLabel.text = timeBeforeEnding
         case .awaitingCompletion(let timeBeforeStarting):
             notificationLabel.text = "Before starting:"
-            timeLabel.text = timeBeforeStarting
+            executingButton.setTitle(timeBeforeStarting, for: .normal)
         case .none:
             print("None")
         }

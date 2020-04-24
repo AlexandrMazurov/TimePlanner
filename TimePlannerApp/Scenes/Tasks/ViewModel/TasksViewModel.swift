@@ -28,6 +28,13 @@ class TasksViewModel: BaseViewModel {
 
     override func createObservers() {
 
+        repository?.addTask(Task(id: UUID().description,
+                                 title: "My Second Task",
+                                 taskDescription: "This is my second task",
+                                 startTime: Date(),
+                                 endTime: Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date(),
+                                 priority: 1))
+
         repository?.tasks
             .map({ [weak self] in
                 self?.setupViewData(from: $0) ?? []
@@ -58,17 +65,23 @@ class TasksViewModel: BaseViewModel {
 
     private func resolveTaskType(_ task: Task) -> TaskViewType? {
         let now = Date()
-        guard let startDate = task.startTime,
-            let endDate = task.endTime else {
+        guard let startTime = task.startTime,
+            let endTime = task.endTime else {
             return nil
         }
-        if now >= startDate && now <= endDate {
-            return .performed(timeBeforeEnding: format(duration: endDate - now))
-        } else if startDate > now {
-            return .awaitingCompletion(timeBeforeStarting: format(duration: startDate - now))
+        if now >= startTime && now <= endTime {
+            return .performed(timeBeforeEnding: format(duration: endTime - now),
+                              procentage: calculateProcentage(startTime: startTime, endTime: endTime))
+        } else if startTime > now {
+            return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
         } else {
             return .completed(rating: TaskScoreRating(rawValue: task.rating.value ?? .zero))
         }
+    }
+
+    private func calculateProcentage(startTime: Date, endTime: Date) -> Int {
+        let now = Date()
+        return Int( 100 * (now - startTime) / (endTime - startTime) )
     }
 
     func format(duration: TimeInterval) -> String {

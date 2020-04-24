@@ -37,20 +37,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoS-I4-ZHW">
                                 <rect key="frame" x="360" y="47" width="110" height="110"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qW-Rp-gyX">
-                                        <rect key="frame" x="8" y="44.5" width="94" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izf-C6-X3g">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="executingButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="fwb-Ql-2C5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="1qW-Rp-gyX" firstAttribute="centerX" secondItem="FoS-I4-ZHW" secondAttribute="centerX" id="BMp-u5-Yvb"/>
-                                    <constraint firstItem="1qW-Rp-gyX" firstAttribute="leading" secondItem="FoS-I4-ZHW" secondAttribute="leading" constant="8" id="N4P-Hi-FBf"/>
-                                    <constraint firstAttribute="trailing" secondItem="1qW-Rp-gyX" secondAttribute="trailing" constant="8" id="iwz-hE-PkE"/>
-                                    <constraint firstItem="1qW-Rp-gyX" firstAttribute="centerY" secondItem="FoS-I4-ZHW" secondAttribute="centerY" id="ud3-Bi-rDF"/>
+                                    <constraint firstAttribute="bottom" secondItem="izf-C6-X3g" secondAttribute="bottom" id="Lzt-IL-8n8"/>
+                                    <constraint firstItem="izf-C6-X3g" firstAttribute="leading" secondItem="FoS-I4-ZHW" secondAttribute="leading" id="Qhs-6G-nq3"/>
+                                    <constraint firstAttribute="trailing" secondItem="izf-C6-X3g" secondAttribute="trailing" id="SKe-Bf-a1t"/>
                                     <constraint firstAttribute="width" secondItem="FoS-I4-ZHW" secondAttribute="height" multiplier="1:1" id="wGD-ev-rTs"/>
+                                    <constraint firstItem="izf-C6-X3g" firstAttribute="top" secondItem="FoS-I4-ZHW" secondAttribute="top" id="xWi-zx-mme"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="K7O-2o-prN">
@@ -100,9 +101,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="Imz-FV-56F" id="9xD-aC-ZdD"/>
+                <outlet property="executingButton" destination="izf-C6-X3g" id="cYH-LK-tfq"/>
                 <outlet property="notificationLabel" destination="K7O-2o-prN" id="GtZ-S5-bjA"/>
                 <outlet property="priorityView" destination="K3k-Nf-Sba" id="dnl-3q-9Ql"/>
-                <outlet property="timeLabel" destination="1qW-Rp-gyX" id="GGq-1L-lEn"/>
                 <outlet property="titleLabel" destination="jmt-2i-gzQ" id="rtE-P9-l5I"/>
             </connections>
             <point key="canvasLocation" x="75.362318840579718" y="77.008928571428569"/>
