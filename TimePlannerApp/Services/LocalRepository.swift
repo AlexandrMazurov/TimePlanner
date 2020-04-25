@@ -35,8 +35,8 @@ class LocalRepository: RepositoryProtocol {
         write(task)
     }
 
-    func updateTask(_ task: Task) {
-        write(task, shouldUpdate: true)
+    func updateTask(_ task: Task, change: (() -> Void)? = nil) {
+        write(task, shouldUpdate: true, change: change)
     }
 
     func deleteTask(_ task: Task) {

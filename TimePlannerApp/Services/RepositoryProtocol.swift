@@ -13,7 +13,7 @@ protocol RepositoryProtocol: class {
 
     var tasks: BehaviorRelay<[Task]?> { get }
     func addTask(_ task: Task)
-    func updateTask(_ task: Task)
+    func updateTask(_ task: Task, change: (() -> Void)?)
     func deleteTask(_ task: Task)
     func deleteAllTasks()
 }
