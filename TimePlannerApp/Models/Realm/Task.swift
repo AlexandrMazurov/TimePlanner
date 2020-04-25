@@ -16,8 +16,9 @@ class Task: Object {
     @objc dynamic var startTime: Date?
     @objc dynamic var endTime: Date?
 
-    let priority = RealmOptional<Int>()
-    let rating = RealmOptional<Int>()
+    private let priority = RealmOptional<Int>()
+    private let rating = RealmOptional<Int>()
+    private let performedType = RealmOptional<Int>()
 
     override class func primaryKey() -> String? {
         return "id"
@@ -39,6 +40,7 @@ extension Task {
         self.startTime = startTime
         self.endTime = endTime
         self.priority.value = priority
+        self.performedType.value = .zero
     }
 }
 
@@ -53,5 +55,22 @@ extension Task {
 
     var isRating: Bool {
         rating.value != nil
+    }
+
+    var performedTaskType: PerformedTaskType? {
+        get {
+            PerformedTaskType(rawValue: performedType.value ?? .zero)
+        }
+        set {
+            performedType.value = newValue?.rawValue
+        }
+    }
+
+    var taskPriority: TaskPriority? {
+        TaskPriority(rawValue: priority.value ?? .zero)
+    }
+
+    var taskRating: TaskScoreRating? {
+        TaskScoreRating(rawValue: rating.value ?? .zero)
     }
 }

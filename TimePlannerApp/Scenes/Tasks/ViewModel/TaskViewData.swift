@@ -24,6 +24,11 @@ public enum TaskScoreRating: Int {
     case highest
 }
 
+public enum PerformedTaskType: Int {
+    case procentage
+    case time
+}
+
 typealias TaskPriority = TaskScoreRating
 
 class TaskViewData {
@@ -31,15 +36,18 @@ class TaskViewData {
     let title: String
     let description: String
     let priority: TaskPriority?
-    var type: TaskViewType?
+    var state: TaskViewType?
+    var perfomedViewType: PerformedTaskType
 
     init(title: String,
          description: String,
          priority: TaskPriority?,
-         type: TaskViewType?) {
+         state: TaskViewType?,
+         performedTaskType: PerformedTaskType) {
         self.title = title
         self.description = description
         self.priority = priority
-        self.type = type
+        self.state = state
+        self.perfomedViewType = performedTaskType
     }
 }
