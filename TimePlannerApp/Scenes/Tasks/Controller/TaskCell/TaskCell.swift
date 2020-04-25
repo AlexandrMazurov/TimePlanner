@@ -15,6 +15,7 @@ private enum ExecutingTaskViewType {
 
 class TaskCell: UITableViewCell, ReusableView {
 
+    @IBOutlet private weak var taskView: UIView!
     @IBOutlet private weak var priorityView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var notificationLabel: UILabel!
@@ -33,7 +34,6 @@ class TaskCell: UITableViewCell, ReusableView {
     }
 
     func configure(with task: TaskViewData) {
-        descriptionLabel.numberOfLines = .max
 
         titleLabel.text = task.title
         descriptionLabel.text = task.description
@@ -57,5 +57,14 @@ class TaskCell: UITableViewCell, ReusableView {
         case .none:
             print("None")
         }
+    }
+
+    private func setupViewSettings() {
+        descriptionLabel.numberOfLines = .max
+        taskView.layer.shadowColor = UIColor.lightGray.cgColor
+        taskView.layer.shadowOpacity = 1
+        taskView.layer.shadowOffset = .zero
+        taskView.layer.shadowRadius = 3
+        taskView.layer.cornerRadius = 10
     }
 }

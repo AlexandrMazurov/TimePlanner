@@ -31,14 +31,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-K1-wr4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jKu-K1-wr4">
+                                <rect key="frame" x="0.0" y="48" width="414" height="848"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jKu-K1-wr4" firstAttribute="top" secondItem="Rex-wL-H15" secondAttribute="top" id="0VF-0e-WjD"/>
+                            <constraint firstItem="jKu-K1-wr4" firstAttribute="top" secondItem="Rex-wL-H15" secondAttribute="top" constant="4" id="0VF-0e-WjD"/>
                             <constraint firstAttribute="bottom" secondItem="jKu-K1-wr4" secondAttribute="bottom" id="3Pe-6L-R6e"/>
                             <constraint firstItem="jKu-K1-wr4" firstAttribute="trailing" secondItem="Rex-wL-H15" secondAttribute="trailing" id="6R6-kT-E7M"/>
                             <constraint firstItem="jKu-K1-wr4" firstAttribute="leading" secondItem="Rex-wL-H15" secondAttribute="leading" id="X4v-59-AX5"/>

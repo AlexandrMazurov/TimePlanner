@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMq-Yl-rUw">
-                        <rect key="frame" x="0.0" y="0.0" width="478" height="170"/>
+                        <rect key="frame" x="8" y="4" width="462" height="162"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-2i-gzQ">
                                 <rect key="frame" x="37" y="13" width="42" height="21"/>
@@ -35,10 +35,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoS-I4-ZHW">
-                                <rect key="frame" x="360" y="47" width="110" height="110"/>
+                                <rect key="frame" x="352" y="47" width="102" height="102"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izf-C6-X3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="executingButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="fwb-Ql-2C5"/>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="K7O-2o-prN">
-                                <rect key="frame" x="360" y="13" width="110" height="21"/>
+                                <rect key="frame" x="352" y="13" width="102" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hOQ-bW-cd4"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-FV-56F">
-                                <rect key="frame" x="8" y="47" width="344" height="110"/>
+                                <rect key="frame" x="8" y="47" width="336" height="102"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -93,10 +93,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="eMq-Yl-rUw" secondAttribute="bottom" id="5ih-K2-IHB"/>
-                    <constraint firstItem="eMq-Yl-rUw" firstAttribute="leading" secondItem="zSM-P6-4ph" secondAttribute="leading" id="QWF-Ek-hB3"/>
-                    <constraint firstItem="eMq-Yl-rUw" firstAttribute="top" secondItem="zSM-P6-4ph" secondAttribute="top" id="UQr-lJ-KTy"/>
-                    <constraint firstAttribute="trailing" secondItem="eMq-Yl-rUw" secondAttribute="trailing" id="pbC-Cl-lnT"/>
+                    <constraint firstAttribute="bottom" secondItem="eMq-Yl-rUw" secondAttribute="bottom" constant="4" id="5ih-K2-IHB"/>
+                    <constraint firstItem="eMq-Yl-rUw" firstAttribute="leading" secondItem="zSM-P6-4ph" secondAttribute="leading" constant="8" id="QWF-Ek-hB3"/>
+                    <constraint firstItem="eMq-Yl-rUw" firstAttribute="top" secondItem="zSM-P6-4ph" secondAttribute="top" constant="4" id="UQr-lJ-KTy"/>
+                    <constraint firstAttribute="trailing" secondItem="eMq-Yl-rUw" secondAttribute="trailing" constant="8" id="pbC-Cl-lnT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -104,6 +104,7 @@
                 <outlet property="executingButton" destination="izf-C6-X3g" id="cYH-LK-tfq"/>
                 <outlet property="notificationLabel" destination="K7O-2o-prN" id="GtZ-S5-bjA"/>
                 <outlet property="priorityView" destination="K3k-Nf-Sba" id="dnl-3q-9Ql"/>
+                <outlet property="taskView" destination="eMq-Yl-rUw" id="ZdO-fu-NBB"/>
                 <outlet property="titleLabel" destination="jmt-2i-gzQ" id="rtE-P9-l5I"/>
             </connections>
             <point key="canvasLocation" x="75.362318840579718" y="77.008928571428569"/>

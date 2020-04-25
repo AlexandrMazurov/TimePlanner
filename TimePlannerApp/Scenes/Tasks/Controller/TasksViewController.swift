@@ -43,6 +43,7 @@ class TasksViewController: BaseViewController {
                 .rx
                 .items(cellIdentifier: TaskCell.reuseIdentifier,
                        cellType: TaskCell.self)) { row, task, cell in
+                        cell.selectionStyle = .none
                         cell.configure(with: task)
                         print(row)
             }
