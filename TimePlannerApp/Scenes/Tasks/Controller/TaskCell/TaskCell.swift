@@ -22,29 +22,24 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var executingButton: UIButton!
     @IBOutlet private weak var descriptionLabel: UILabel!
 
-    private var executingType: ExecutingTaskViewType = .procentage
+    var didUserChangePerformedType: (() -> Void)?
 
     @IBAction func executingButtonTapped(_ sender: UIButton) {
-        switch executingType {
-        case .time:
-            executingType = .procentage
-        case .procentage:
-            executingType = .time
-        }
+        didUserChangePerformedType?()
     }
 
     func configure(with task: TaskViewData) {
-
+        setupViewSettings()
         titleLabel.text = task.title
         descriptionLabel.text = task.description
         priorityView.backgroundColor = .green
 
-        switch task.type {
+        switch task.state {
         case .completed(let rating):
             notificationLabel.text = "Completed"
             executingButton.setTitle(String(describing: rating), for: .normal)
         case .performed(let data):
-            switch executingType {
+            switch task.perfomedViewType {
             case .time:
                 executingButton.setTitle(data.timeBeforeEnding, for: .normal)
             case .procentage:

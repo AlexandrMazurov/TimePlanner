@@ -48,7 +48,17 @@ class TasksViewModel: BaseViewModel {
             .map({ [weak self] in (self?.setupViewData(from: $0?.value) ?? []) })
             .bind(to: tasksViewData)
             .disposed(by: rxBag)
+    }
 
+    func changePerformedViewType(at row: Int) {
+        guard let task = repository?.tasks.value?[row],
+            let type = task.performedTaskType else {
+            return
+        }
+        let newType: PerformedTaskType = type == .time ? .procentage: .time
+        repository?.updateTask(task, change: {
+            task.performedTaskType = newType
+        })
     }
 
     private func setupViewData(from tasks: [Task]?) -> [TaskViewData] {
@@ -58,12 +68,13 @@ class TasksViewModel: BaseViewModel {
         return tasks.compactMap {
             TaskViewData(title: $0.title ?? "",
                          description: $0.taskDescription ?? "",
-                         priority: TaskPriority(rawValue: $0.priority.value ?? .zero),
-                         type: resolveTaskType($0))
+                         priority: $0.taskPriority,
+                         state: resolveTaskState($0),
+                         performedTaskType: $0.performedTaskType ?? .procentage)
             }
     }
 
-    private func resolveTaskType(_ task: Task) -> TaskViewType? {
+    private func resolveTaskState(_ task: Task) -> TaskViewType? {
         let now = Date()
         guard let startTime = task.startTime,
             let endTime = task.endTime else {
@@ -75,7 +86,7 @@ class TasksViewModel: BaseViewModel {
         } else if startTime > now {
             return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
         } else {
-            return .completed(rating: TaskScoreRating(rawValue: task.rating.value ?? .zero))
+            return .completed(rating: task.taskRating)
         }
     }
 

@@ -45,6 +45,10 @@ class TasksViewController: BaseViewController {
                        cellType: TaskCell.self)) { row, task, cell in
                         cell.selectionStyle = .none
                         cell.configure(with: task)
+                        cell.didUserChangePerformedType = { [weak self] in
+                            viewModel.changePerformedViewType(at: row)
+                            self?.tasksTableView.reloadData()
+                        }
                         print(row)
             }
         .disposed(by: rxBag)
