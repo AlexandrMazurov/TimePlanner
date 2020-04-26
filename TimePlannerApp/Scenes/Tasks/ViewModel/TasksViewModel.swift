@@ -47,10 +47,8 @@ class TasksViewModel: BaseViewModel {
 
         Observable<Int>
             .interval(.seconds(Constants.secondTimeInterval), scheduler: MainScheduler.instance)
-            .subscribe({ [weak self] _ in
-                self?.updateTasksState()
-                self?.shouldUpdateView.onNext(true)
-            })
+            .map { _ in Void() }
+            .bind(onNext: updateTasksState)
             .disposed(by: rxBag)
     }
 
@@ -65,6 +63,7 @@ class TasksViewModel: BaseViewModel {
         for (index, taskData) in tasksViewData.value.enumerated() {
             taskData.state = self.resolveTaskState(tasks?[index])
         }
+        shouldUpdateView.onNext(true)
     }
 
     private func setupViewData(from tasks: [Task]?) -> [TaskViewData] {
