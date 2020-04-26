@@ -29,13 +29,13 @@ class TasksViewModel: BaseViewModel {
 
     override func createObservers() {
 
-        for _ in 1...10 {
+        for index in 1...5 {
             repository?.addTask(Task(id: UUID().description,
                                      title: "My Second Task",
                                      taskDescription: "This is my second task",
                                      startTime: Date(),
                                      endTime: Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date(),
-                                     priority: 1))
+                                     priority: index))
         }
 
         repository?.tasks

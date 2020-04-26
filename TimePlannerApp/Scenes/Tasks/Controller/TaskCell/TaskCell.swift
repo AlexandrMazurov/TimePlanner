@@ -30,9 +30,9 @@ class TaskCell: UITableViewCell, ReusableView {
 
     func configure(with task: TaskViewData) {
         setupViewSettings()
+        setupPriorityView(with: task.priority ?? .none)
         titleLabel.text = task.title
         descriptionLabel.text = task.description
-        priorityView.backgroundColor = .green
 
         switch task.state {
         case .completed(let rating):
@@ -54,7 +54,25 @@ class TaskCell: UITableViewCell, ReusableView {
         }
     }
 
+    private func setupPriorityView(with priority: TaskPriority) {
+        switch priority {
+        case .none:
+            priorityView.backgroundColor = .clear
+        case .lowest:
+            priorityView.backgroundColor = ColorName.lowestPriority.color
+        case .low:
+            priorityView.backgroundColor = ColorName.lowPriority.color
+        case .average:
+            priorityView.backgroundColor = ColorName.averagePriority.color
+        case .high:
+            priorityView.backgroundColor = ColorName.highPriority.color
+        case .highest:
+            priorityView.backgroundColor = ColorName.highestPriority.color
+        }
+    }
+
     private func setupViewSettings() {
+        priorityView.layer.cornerRadius = priorityView.frame.size.height / 2
         descriptionLabel.numberOfLines = .max
         taskView.layer.shadowColor = UIColor.lightGray.cgColor
         taskView.layer.shadowOpacity = 1

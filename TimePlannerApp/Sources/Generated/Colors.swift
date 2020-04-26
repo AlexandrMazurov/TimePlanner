@@ -19,24 +19,21 @@ internal struct ColorName {
   internal let rgbaValue: UInt32
   internal var color: Color { return Color(named: self) }
 
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#15b2e3"></span>
-  /// Alpha: 100% <br/> (0x15b2e3ff)
-  internal static let buttonHighlited = ColorName(rgbaValue: 0x15b2e3ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#25bee0"></span>
-  /// Alpha: 100% <br/> (0x25bee0ff)
-  internal static let buttonNormal = ColorName(rgbaValue: 0x25bee0ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#beccdc"></span>
-  /// Alpha: 100% <br/> (0xbeccdcff)
-  internal static let disabled = ColorName(rgbaValue: 0xbeccdcff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#feebf0"></span>
-  /// Alpha: 100% <br/> (0xfeebf0ff)
-  internal static let errorBackground = ColorName(rgbaValue: 0xfeebf0ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ff023f"></span>
-  /// Alpha: 100% <br/> (0xff023fff)
-  internal static let errorText = ColorName(rgbaValue: 0xff023fff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#92a9c3"></span>
-  /// Alpha: 100% <br/> (0x92a9c3ff)
-  internal static let textFieldBorderColor = ColorName(rgbaValue: 0x92a9c3ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#3dcf04"></span>
+  /// Alpha: 100% <br/> (0x3dcf04ff)
+  internal static let averagePriority = ColorName(rgbaValue: 0x3dcf04ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#eb6e00"></span>
+  /// Alpha: 100% <br/> (0xeb6e00ff)
+  internal static let highPriority = ColorName(rgbaValue: 0xeb6e00ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#eb1000"></span>
+  /// Alpha: 100% <br/> (0xeb1000ff)
+  internal static let highestPriority = ColorName(rgbaValue: 0xeb1000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#e1e809"></span>
+  /// Alpha: 100% <br/> (0xe1e809ff)
+  internal static let lowPriority = ColorName(rgbaValue: 0xe1e809ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#09bbe8"></span>
+  /// Alpha: 100% <br/> (0x09bbe8ff)
+  internal static let lowestPriority = ColorName(rgbaValue: 0x09bbe8ff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 
