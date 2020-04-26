@@ -16,6 +16,7 @@ class TasksViewModel: BaseViewModel {
     }
 
     let tasksViewData = BehaviorRelay<[TaskViewData]>(value: [])
+    let shouldUpdateView = BehaviorSubject<Bool>(value: false)
     weak var repository: RepositoryProtocol?
 
     init(repository: RepositoryProtocol?) {
@@ -28,12 +29,14 @@ class TasksViewModel: BaseViewModel {
 
     override func createObservers() {
 
-        repository?.addTask(Task(id: UUID().description,
-                                 title: "My Second Task",
-                                 taskDescription: "This is my second task",
-                                 startTime: Date(),
-                                 endTime: Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date(),
-                                 priority: 1))
+        for _ in 1...10 {
+            repository?.addTask(Task(id: UUID().description,
+                                     title: "My Second Task",
+                                     taskDescription: "This is my second task",
+                                     startTime: Date(),
+                                     endTime: Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date(),
+                                     priority: 1))
+        }
 
         repository?.tasks
             .map({ [weak self] in
@@ -44,21 +47,24 @@ class TasksViewModel: BaseViewModel {
 
         Observable<Int>
             .interval(.seconds(Constants.secondTimeInterval), scheduler: MainScheduler.instance)
-            .flatMap({ [weak self] _ in Observable.just(self?.repository?.tasks) })
-            .map({ [weak self] in (self?.setupViewData(from: $0?.value) ?? []) })
-            .bind(to: tasksViewData)
+            .subscribe({ [weak self] _ in
+                self?.updateTasksState()
+                self?.shouldUpdateView.onNext(true)
+            })
             .disposed(by: rxBag)
     }
 
     func changePerformedViewType(at row: Int) {
-        guard let task = repository?.tasks.value?[row],
-            let type = task.performedTaskType else {
-            return
+        let taskViewData = tasksViewData.value[row]
+        let newType: PerformedTaskType = taskViewData.perfomedViewType == .time ? .procentage: .time
+        taskViewData.perfomedViewType = newType
+    }
+
+    private func updateTasksState() {
+        let tasks = repository?.tasks.value
+        for (index, taskData) in tasksViewData.value.enumerated() {
+            taskData.state = self.resolveTaskState(tasks?[index])
         }
-        let newType: PerformedTaskType = type == .time ? .procentage: .time
-        repository?.updateTask(task, change: {
-            task.performedTaskType = newType
-        })
     }
 
     private func setupViewData(from tasks: [Task]?) -> [TaskViewData] {
@@ -70,13 +76,14 @@ class TasksViewModel: BaseViewModel {
                          description: $0.taskDescription ?? "",
                          priority: $0.taskPriority,
                          state: resolveTaskState($0),
-                         performedTaskType: $0.performedTaskType ?? .procentage)
+                         performedTaskType: .procentage)
             }
     }
 
-    private func resolveTaskState(_ task: Task) -> TaskViewType? {
+    private func resolveTaskState(_ task: Task?) -> TaskViewType? {
         let now = Date()
-        guard let startTime = task.startTime,
+        guard let task = task,
+            let startTime = task.startTime,
             let endTime = task.endTime else {
             return nil
         }

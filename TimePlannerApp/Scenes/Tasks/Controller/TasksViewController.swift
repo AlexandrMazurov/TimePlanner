@@ -52,6 +52,16 @@ class TasksViewController: BaseViewController {
                         print(row)
             }
         .disposed(by: rxBag)
+
+        viewModel.shouldUpdateView
+            .subscribe({ [weak self] _ in
+                self?.reloadData()
+            })
+            .disposed(by: rxBag)
+    }
+
+    func reloadData() {
+        tasksTableView.reloadData()
     }
 }
 
