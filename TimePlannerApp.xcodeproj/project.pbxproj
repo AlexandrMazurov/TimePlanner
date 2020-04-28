@@ -38,6 +38,8 @@
 		4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C753F2402CC06004B584E /* StatisticsViewController.swift */; };
 		4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75412402CC24004B584E /* SettingsViewController.swift */; };
 		4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9342BB242128230013F520 /* TabBarControllersModel.swift */; };
+		4BAA1C672455CD51002F2B94 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1C662455CD51002F2B94 /* ProgressView.swift */; };
+		4BAA1C692455CD62002F2B94 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAA1C682455CD62002F2B94 /* ProgressView.xib */; };
 		4BAE9EE5244E208300827FF2 /* TaskViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE4244E208300827FF2 /* TaskViewData.swift */; };
 		4BAE9EE7244E242500827FF2 /* Date+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE6244E242500827FF2 /* Date+Time.swift */; };
 		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
@@ -93,6 +95,8 @@
 		4B3C753F2402CC06004B584E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		4B3C75412402CC24004B584E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B9342BB242128230013F520 /* TabBarControllersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllersModel.swift; sourceTree = "<group>"; };
+		4BAA1C662455CD51002F2B94 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		4BAA1C682455CD62002F2B94 /* ProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		4BAE9EE4244E208300827FF2 /* TaskViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewData.swift; sourceTree = "<group>"; };
 		4BAE9EE6244E242500827FF2 /* Date+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Time.swift"; sourceTree = "<group>"; };
 		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		4B3C75352402CAE4004B584E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4BAA1C642455CD23002F2B94 /* CustomViews */,
 				4BFC60C0244AF3BB00081946 /* TaskCell */,
 				4B3C75372402CB3A004B584E /* TasksViewController.swift */,
 			);
@@ -385,6 +390,23 @@
 				4BFC60CE244B72D900081946 /* Task.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		4BAA1C642455CD23002F2B94 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				4BAA1C652455CD30002F2B94 /* ProgressView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4BAA1C652455CD30002F2B94 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				4BAA1C662455CD51002F2B94 /* ProgressView.swift */,
+				4BAA1C682455CD62002F2B94 /* ProgressView.xib */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		4BBCBCDD2401A937008A12A8 /* Scenes */ = {
@@ -569,6 +591,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAA1C692455CD62002F2B94 /* ProgressView.xib in Resources */,
 				4BFC60C2244AF3DE00081946 /* TaskCell.xib in Resources */,
 				1F7F6B7923F9872000D917F8 /* LaunchScreen.storyboard in Resources */,
 				4B19BF5F244851EA006094D0 /* swiftgen.yml in Resources */,
@@ -700,6 +723,7 @@
 				4B19BF542447A4A9006094D0 /* UIViewController+Present.swift in Sources */,
 				4B19BF5024438236006094D0 /* DashboardViewModel.swift in Sources */,
 				4B19BF4D2443819B006094D0 /* StatisticsViewModel.swift in Sources */,
+				4BAA1C672455CD51002F2B94 /* ProgressView.swift in Sources */,
 				4BFC60CF244B72D900081946 /* Task.swift in Sources */,
 				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
 			);
