@@ -19,36 +19,45 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var priorityView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var notificationLabel: UILabel!
-    @IBOutlet private weak var executingButton: UIButton!
+    @IBOutlet private weak var progressView: ProgressView!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var progressButton: UIButton!
 
     var didUserChangePerformedType: (() -> Void)?
 
-    @IBAction func executingButtonTapped(_ sender: UIButton) {
-        didUserChangePerformedType?()
+    @IBAction func porgressButtonTapped(_ sender: UIButton) {
+        self.didUserChangePerformedType?()
     }
 
     func configure(with task: TaskViewData) {
         setupViewSettings()
         setupPriorityView(with: task.priority ?? .none)
+        progressView.layoutIfNeeded()
         titleLabel.text = task.title
         descriptionLabel.text = task.description
+        configureViewState(with: task)
+    }
 
+    private func configureViewState(with task: TaskViewData) {
         switch task.state {
         case .completed(let rating):
             notificationLabel.text = "Completed"
-            executingButton.setTitle(String(describing: rating), for: .normal)
+            progressView.setupInfo(with: "Completed", description: "")
+            print(rating as Any)
         case .performed(let data):
             switch task.perfomedViewType {
             case .time:
-                executingButton.setTitle(data.timeBeforeEnding, for: .normal)
+                progressView.setupInfo(with: data.timeBeforeEnding, description: "Befor ending")
             case .procentage:
-                executingButton.setTitle("\(data.procentage.description)%", for: .normal)
+                progressView.setupInfo(with: "\(Int(data.procentage).description)%", description: "completed")
             }
+            progressView.confogureProgressView(duration: 1,
+                                           fromValue: Double(data.oldProcentage / 100),
+                                           toValue: Double(data.procentage / 100))
             notificationLabel.text = "Before ending:"
         case .awaitingCompletion(let timeBeforeStarting):
             notificationLabel.text = "Before starting:"
-            executingButton.setTitle(timeBeforeStarting, for: .normal)
+            progressView.setupInfo(with: timeBeforeStarting, description: "awaiting")
         case .none:
             print("None")
         }

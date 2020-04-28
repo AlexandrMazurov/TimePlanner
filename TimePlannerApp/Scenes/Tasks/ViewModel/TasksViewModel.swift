@@ -29,12 +29,15 @@ class TasksViewModel: BaseViewModel {
 
     override func createObservers() {
 
+        repository?.deleteAllTasks()
         for index in 1...5 {
             repository?.addTask(Task(id: UUID().description,
                                      title: "My Second Task",
                                      taskDescription: "This is my second task",
                                      startTime: Date(),
-                                     endTime: Calendar.current.date(byAdding: .minute, value: 1, to: Date()) ?? Date(),
+                                     endTime: Calendar.current.date(byAdding: .minute,
+                                                                    value: index,
+                                                                    to: Date()) ?? Date(),
                                      priority: index))
         }
 
@@ -88,6 +91,7 @@ class TasksViewModel: BaseViewModel {
         }
         if now >= startTime && now <= endTime {
             return .performed(timeBeforeEnding: format(duration: endTime - now),
+                              oldProcentage: calculateOldProcentage(startTime: startTime, endTime: endTime),
                               procentage: calculateProcentage(startTime: startTime, endTime: endTime))
         } else if startTime > now {
             return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
@@ -96,9 +100,16 @@ class TasksViewModel: BaseViewModel {
         }
     }
 
-    private func calculateProcentage(startTime: Date, endTime: Date) -> Int {
+    private func calculateProcentage(startTime: Date, endTime: Date) -> Double {
         let now = Date()
-        return Int( 100 * (now - startTime) / (endTime - startTime) )
+        return  100 * (now - startTime) / (endTime - startTime)
+    }
+
+    private func calculateOldProcentage(startTime: Date, endTime: Date) -> Double {
+        guard let oldDate = Calendar.current.date(byAdding: .second, value: -1, to: Date()) else {
+            return 0.0
+        }
+        return  100 * (oldDate - startTime) / (endTime - startTime)
     }
 
     func format(duration: TimeInterval) -> String {

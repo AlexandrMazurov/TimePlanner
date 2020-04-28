@@ -8,15 +8,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="170" id="FSV-na-yvJ" customClass="TaskCell" customModule="TimePlannerApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="478" height="170"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="177" id="FSV-na-yvJ" customClass="TaskCell" customModule="TimePlannerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="525" height="177"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FSV-na-yvJ" id="zSM-P6-4ph">
-                <rect key="frame" x="0.0" y="0.0" width="478" height="170"/>
+                <rect key="frame" x="0.0" y="0.0" width="525" height="177"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMq-Yl-rUw">
-                        <rect key="frame" x="8" y="4" width="462" height="162"/>
+                        <rect key="frame" x="8" y="4" width="509" height="169"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-2i-gzQ">
                                 <rect key="frame" x="37" y="13" width="42" height="21"/>
@@ -34,28 +34,21 @@
                                     <constraint firstAttribute="width" secondItem="K3k-Nf-Sba" secondAttribute="height" multiplier="1:1" id="o4v-H2-Kxl"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoS-I4-ZHW">
-                                <rect key="frame" x="352" y="47" width="102" height="102"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izf-C6-X3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="executingButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="fwb-Ql-2C5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoS-I4-ZHW" customClass="ProgressView" customModule="TimePlannerApp" customModuleProvider="target">
+                                <rect key="frame" x="392" y="47" width="109" height="109"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="izf-C6-X3g" secondAttribute="bottom" id="Lzt-IL-8n8"/>
-                                    <constraint firstItem="izf-C6-X3g" firstAttribute="leading" secondItem="FoS-I4-ZHW" secondAttribute="leading" id="Qhs-6G-nq3"/>
-                                    <constraint firstAttribute="trailing" secondItem="izf-C6-X3g" secondAttribute="trailing" id="SKe-Bf-a1t"/>
                                     <constraint firstAttribute="width" secondItem="FoS-I4-ZHW" secondAttribute="height" multiplier="1:1" id="wGD-ev-rTs"/>
-                                    <constraint firstItem="izf-C6-X3g" firstAttribute="top" secondItem="FoS-I4-ZHW" secondAttribute="top" id="xWi-zx-mme"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVM-55-2cI">
+                                <rect key="frame" x="392" y="47" width="109" height="109"/>
+                                <connections>
+                                    <action selector="porgressButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="xba-li-0n7"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="K7O-2o-prN">
-                                <rect key="frame" x="352" y="13" width="102" height="21"/>
+                                <rect key="frame" x="392" y="13" width="109" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hOQ-bW-cd4"/>
                                 </constraints>
@@ -64,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imz-FV-56F">
-                                <rect key="frame" x="8" y="47" width="336" height="102"/>
+                                <rect key="frame" x="8" y="47" width="376" height="109"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,20 +68,30 @@
                             <constraint firstItem="K3k-Nf-Sba" firstAttribute="leading" secondItem="eMq-Yl-rUw" secondAttribute="leading" constant="8" id="1NS-3z-KAT"/>
                             <constraint firstAttribute="trailing" secondItem="K7O-2o-prN" secondAttribute="trailing" constant="8" id="1io-xA-iRA"/>
                             <constraint firstAttribute="trailing" secondItem="K7O-2o-prN" secondAttribute="trailing" constant="8" id="3ba-We-isa"/>
+                            <constraint firstItem="lVM-55-2cI" firstAttribute="width" secondItem="FoS-I4-ZHW" secondAttribute="width" id="3uD-JJ-5zC"/>
                             <constraint firstItem="Imz-FV-56F" firstAttribute="top" secondItem="jmt-2i-gzQ" secondAttribute="bottom" constant="13" id="3yX-oJ-n0D"/>
                             <constraint firstAttribute="trailing" secondItem="FoS-I4-ZHW" secondAttribute="trailing" constant="8" id="7kd-Ru-JHH"/>
+                            <constraint firstAttribute="trailing" secondItem="lVM-55-2cI" secondAttribute="trailing" constant="8" id="AOq-j1-Ede"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="Bcu-fI-cDG"/>
                             <constraint firstItem="Imz-FV-56F" firstAttribute="leading" secondItem="eMq-Yl-rUw" secondAttribute="leading" constant="8" id="F6X-wj-DnU"/>
+                            <constraint firstItem="FoS-I4-ZHW" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="FBh-w8-ICA"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="width" secondItem="FoS-I4-ZHW" secondAttribute="width" id="G5P-uB-IQN"/>
+                            <constraint firstItem="lVM-55-2cI" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="Qga-fz-5lf"/>
+                            <constraint firstItem="lVM-55-2cI" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="Rda-nR-QOu"/>
                             <constraint firstItem="K3k-Nf-Sba" firstAttribute="height" secondItem="jmt-2i-gzQ" secondAttribute="height" id="SYz-ee-y3V"/>
+                            <constraint firstItem="FoS-I4-ZHW" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="SgG-co-Ivq"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="WeL-rL-yDj"/>
                             <constraint firstItem="jmt-2i-gzQ" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="XXf-Ja-of4"/>
                             <constraint firstAttribute="bottom" secondItem="Imz-FV-56F" secondAttribute="bottom" constant="13" id="aD2-TQ-lbz"/>
                             <constraint firstItem="jmt-2i-gzQ" firstAttribute="leading" secondItem="K3k-Nf-Sba" secondAttribute="trailing" constant="8" id="c3s-OO-CaR"/>
+                            <constraint firstItem="lVM-55-2cI" firstAttribute="height" secondItem="FoS-I4-ZHW" secondAttribute="height" id="f0f-N5-Adm"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="i2f-ZH-nN1"/>
+                            <constraint firstAttribute="trailing" secondItem="FoS-I4-ZHW" secondAttribute="trailing" constant="8" id="lhg-QI-RXg"/>
+                            <constraint firstAttribute="bottom" secondItem="FoS-I4-ZHW" secondAttribute="bottom" constant="13" id="tEO-EN-A4r"/>
                             <constraint firstItem="K3k-Nf-Sba" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="vT0-0G-cMm"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="xZM-Cs-jyV"/>
                             <constraint firstAttribute="bottom" secondItem="FoS-I4-ZHW" secondAttribute="bottom" constant="13" id="z6p-sa-WqJ"/>
+                            <constraint firstAttribute="bottom" secondItem="lVM-55-2cI" secondAttribute="bottom" constant="13" id="zvr-1X-Pma"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -101,13 +104,14 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="Imz-FV-56F" id="9xD-aC-ZdD"/>
-                <outlet property="executingButton" destination="izf-C6-X3g" id="cYH-LK-tfq"/>
                 <outlet property="notificationLabel" destination="K7O-2o-prN" id="GtZ-S5-bjA"/>
                 <outlet property="priorityView" destination="K3k-Nf-Sba" id="dnl-3q-9Ql"/>
+                <outlet property="progressButton" destination="lVM-55-2cI" id="ED8-LV-abs"/>
+                <outlet property="progressView" destination="FoS-I4-ZHW" id="jsZ-tB-Wa1"/>
                 <outlet property="taskView" destination="eMq-Yl-rUw" id="ZdO-fu-NBB"/>
                 <outlet property="titleLabel" destination="jmt-2i-gzQ" id="rtE-P9-l5I"/>
             </connections>
-            <point key="canvasLocation" x="75.362318840579718" y="77.008928571428569"/>
+            <point key="canvasLocation" x="109.42028985507247" y="79.352678571428569"/>
         </tableViewCell>
     </objects>
 </document>

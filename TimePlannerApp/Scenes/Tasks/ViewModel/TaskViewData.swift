@@ -11,7 +11,7 @@ import RxCocoa
 
 public enum TaskViewType {
     case completed(rating: TaskScoreRating?)
-    case performed(timeBeforeEnding: String, procentage: Int)
+    case performed(timeBeforeEnding: String, oldProcentage: Double, procentage: Double)
     case awaitingCompletion(timeBeforeStarting: String)
 }
 

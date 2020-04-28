@@ -49,7 +49,6 @@ class TasksViewController: BaseViewController {
                             viewModel.changePerformedViewType(at: row)
                             self?.tasksTableView.reloadData()
                         }
-                        print(row)
             }
         .disposed(by: rxBag)
 
