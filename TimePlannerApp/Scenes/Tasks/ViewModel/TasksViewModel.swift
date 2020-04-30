@@ -16,7 +16,6 @@ class TasksViewModel: BaseViewModel {
     }
 
     let tasksViewData = BehaviorRelay<[TaskViewData]>(value: [])
-    let shouldUpdateView = BehaviorSubject<Bool>(value: false)
     weak var repository: RepositoryProtocol?
 
     init(repository: RepositoryProtocol?) {
@@ -49,7 +48,7 @@ class TasksViewModel: BaseViewModel {
         .disposed(by: rxBag)
 
         Observable<Int>
-            .interval(.seconds(Constants.secondTimeInterval), scheduler: MainScheduler.instance)
+            .interval(.milliseconds(Constants.secondTimeInterval), scheduler: MainScheduler.instance)
             .map { _ in Void() }
             .bind(onNext: updateTasksState)
             .disposed(by: rxBag)
@@ -64,9 +63,8 @@ class TasksViewModel: BaseViewModel {
     private func updateTasksState() {
         let tasks = repository?.tasks.value
         for (index, taskData) in tasksViewData.value.enumerated() {
-            taskData.state = self.resolveTaskState(tasks?[index])
+            taskData.state.accept(resolveTaskState(tasks?[index]))
         }
-        shouldUpdateView.onNext(true)
     }
 
     private func setupViewData(from tasks: [Task]?) -> [TaskViewData] {
@@ -74,12 +72,13 @@ class TasksViewModel: BaseViewModel {
             return []
         }
         return tasks.compactMap {
-            TaskViewData(title: $0.title ?? "",
-                         description: $0.taskDescription ?? "",
-                         priority: $0.taskPriority,
-                         state: resolveTaskState($0),
-                         performedTaskType: .procentage)
-            }
+            let tasksData = TaskViewData(title: $0.title ?? "",
+                                     description: $0.taskDescription ?? "",
+                                     priority: $0.taskPriority,
+                                     performedTaskType: .procentage)
+            tasksData.state.accept(resolveTaskState($0))
+            return tasksData
+        }
     }
 
     private func resolveTaskState(_ task: Task?) -> TaskViewType? {
@@ -91,7 +90,6 @@ class TasksViewModel: BaseViewModel {
         }
         if now >= startTime && now <= endTime {
             return .performed(timeBeforeEnding: format(duration: endTime - now),
-                              oldProcentage: calculateOldProcentage(startTime: startTime, endTime: endTime),
                               procentage: calculateProcentage(startTime: startTime, endTime: endTime))
         } else if startTime > now {
             return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
@@ -103,13 +101,6 @@ class TasksViewModel: BaseViewModel {
     private func calculateProcentage(startTime: Date, endTime: Date) -> Double {
         let now = Date()
         return  100 * (now - startTime) / (endTime - startTime)
-    }
-
-    private func calculateOldProcentage(startTime: Date, endTime: Date) -> Double {
-        guard let oldDate = Calendar.current.date(byAdding: .second, value: -1, to: Date()) else {
-            return 0.0
-        }
-        return  100 * (oldDate - startTime) / (endTime - startTime)
     }
 
     func format(duration: TimeInterval) -> String {

@@ -11,7 +11,7 @@ import RxCocoa
 
 public enum TaskViewType {
     case completed(rating: TaskScoreRating?)
-    case performed(timeBeforeEnding: String, oldProcentage: Double, procentage: Double)
+    case performed(timeBeforeEnding: String, procentage: Double)
     case awaitingCompletion(timeBeforeStarting: String)
 }
 
@@ -36,18 +36,16 @@ class TaskViewData {
     let title: String
     let description: String
     let priority: TaskPriority?
-    var state: TaskViewType?
     var perfomedViewType: PerformedTaskType
+    let state = BehaviorRelay<TaskViewType?>(value: nil)
 
     init(title: String,
          description: String,
          priority: TaskPriority?,
-         state: TaskViewType?,
          performedTaskType: PerformedTaskType) {
         self.title = title
         self.description = description
         self.priority = priority
-        self.state = state
         self.perfomedViewType = performedTaskType
     }
 }

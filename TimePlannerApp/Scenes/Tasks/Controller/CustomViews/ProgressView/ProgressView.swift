@@ -12,8 +12,6 @@ class ProgressView: UIView {
 
     private enum Constants {
         static let instantioateXibErrorMessage = "View not found"
-        static let progressAnimationName = "strokeEnd"
-        static let progressAnimationKey = "animateprogress"
         static let halfElementSizeDivider: CGFloat = 2
         static let shadowOpacity: Float = 1
         static let circlePIFactor: CGFloat = 1.5
@@ -22,7 +20,7 @@ class ProgressView: UIView {
         static let circleLayerOpacity: Float = 0.5
         static let circleLayerShadowRadius: CGFloat = 1
         static let progressLayerLineWidth: CGFloat = 6
-        static let progressLayerLineColor: CGColor = UIColor.red.cgColor
+        static let progressLayerLineColor: CGColor = UIColor.green.cgColor
         static let progressLayerShadowRadius: CGFloat = 0.5
         static let progressLayerCornerRadius: CGFloat = 3
     }
@@ -32,7 +30,6 @@ class ProgressView: UIView {
 
     private var circleLayer = CAShapeLayer()
     private var progressLayer = CAShapeLayer()
-    private var currentProgressLayer = CAShapeLayer()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,23 +41,14 @@ class ProgressView: UIView {
         commonInit()
     }
 
-    func setupInfo(with metric: String?, description: String) {
+    func setupInfo(with metric: String?, description: String?) {
         infoMetricLabel.text = metric
         infoDiscriptionLabel.text = description
     }
 
-    func confogureProgressView(duration: TimeInterval, fromValue: Double, toValue: Double) {
+    func confogureProgressView(with completedProcentage: Double) {
         setupCircleLayer()
-        setupProgressLayer()
-        fillCompletedLayer(to: fromValue)
-        let circularProgressAnimation = CABasicAnimation(keyPath: Constants.progressAnimationName)
-        circularProgressAnimation.duration = duration
-        circularProgressAnimation.fromValue = fromValue
-        circularProgressAnimation.toValue = toValue
-        circularProgressAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        progressLayer.strokeStart = CGFloat(fromValue)
-        progressLayer.strokeEnd = CGFloat(toValue)
-        progressLayer.add(circularProgressAnimation, forKey: Constants.progressAnimationKey)
+        fillCompletedLayer(to: completedProcentage)
     }
 
     private func commonInit() {
@@ -74,13 +62,13 @@ class ProgressView: UIView {
     }
 
     private func fillCompletedLayer(to value: Double) {
-        configureBaseCircleLayer(currentProgressLayer,
-                                 lineWidth: progressLayer.lineWidth,
+        configureBaseCircleLayer(progressLayer,
+                                 lineWidth: Constants.progressLayerLineWidth,
                                  color: Constants.progressLayerLineColor)
-        addShadowToLayer(layer: currentProgressLayer, radius: progressLayer.shadowRadius)
-        currentProgressLayer.cornerRadius = Constants.progressLayerCornerRadius
-        currentProgressLayer.strokeEnd = CGFloat(value)
-        layer.addSublayer(currentProgressLayer)
+        addShadowToLayer(layer: progressLayer, radius: Constants.progressLayerShadowRadius)
+        progressLayer.cornerRadius = Constants.progressLayerCornerRadius
+        progressLayer.strokeEnd = CGFloat(value)
+        layer.addSublayer(progressLayer)
     }
 
     private func setupCircleLayer() {
@@ -90,15 +78,6 @@ class ProgressView: UIView {
         addShadowToLayer(layer: circleLayer, radius: Constants.circleLayerShadowRadius)
         circleLayer.opacity = Constants.circleLayerOpacity
         layer.addSublayer(circleLayer)
-    }
-
-    private func setupProgressLayer() {
-        configureBaseCircleLayer(progressLayer,
-                                 lineWidth: Constants.progressLayerLineWidth,
-                                 color: Constants.progressLayerLineColor)
-        addShadowToLayer(layer: progressLayer, radius: Constants.progressLayerShadowRadius)
-        progressLayer.cornerRadius = Constants.progressLayerCornerRadius
-        layer.addSublayer(progressLayer)
     }
 
     private func configureBaseCircleLayer(_ layer: CAShapeLayer, lineWidth: CGFloat, color: CGColor) {

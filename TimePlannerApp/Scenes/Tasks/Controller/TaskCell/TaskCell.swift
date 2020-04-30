@@ -6,7 +6,8 @@
 //  Copyright © 2020 AlexandrMazurov. All rights reserved.
 //
 
-import UIKit
+import RxSwift
+import RxCocoa
 
 private enum ExecutingTaskViewType {
     case time
@@ -24,42 +25,49 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var progressButton: UIButton!
 
     var didUserChangePerformedType: (() -> Void)?
+    let rxBag = DisposeBag()
 
     @IBAction func porgressButtonTapped(_ sender: UIButton) {
         self.didUserChangePerformedType?()
     }
 
     func configure(with task: TaskViewData) {
+        setupObservers(with: task)
         setupViewSettings()
         setupPriorityView(with: task.priority ?? .none)
         progressView.layoutIfNeeded()
         titleLabel.text = task.title
         descriptionLabel.text = task.description
-        configureViewState(with: task)
     }
 
-    private func configureViewState(with task: TaskViewData) {
-        switch task.state {
+    private func setupObservers(with task: TaskViewData) {
+        task.state
+            .subscribe { [weak self] state in
+                guard let state  = state.element as? TaskViewType else {
+                    return
+                }
+                self?.configureViewState(state, performedType: task.perfomedViewType)
+        }.disposed(by: rxBag)
+    }
+
+    private func configureViewState(_ state: TaskViewType, performedType: PerformedTaskType) {
+        switch state {
         case .completed(let rating):
             notificationLabel.text = "Completed"
             progressView.setupInfo(with: "Completed", description: "")
             print(rating as Any)
         case .performed(let data):
-            switch task.perfomedViewType {
+            switch performedType {
             case .time:
                 progressView.setupInfo(with: data.timeBeforeEnding, description: "Befor ending")
             case .procentage:
                 progressView.setupInfo(with: "\(Int(data.procentage).description)%", description: "completed")
             }
-            progressView.confogureProgressView(duration: 1,
-                                           fromValue: Double(data.oldProcentage / 100),
-                                           toValue: Double(data.procentage / 100))
+            progressView.confogureProgressView(with: Double(data.procentage / 100))
             notificationLabel.text = "Before ending:"
         case .awaitingCompletion(let timeBeforeStarting):
             notificationLabel.text = "Before starting:"
             progressView.setupInfo(with: timeBeforeStarting, description: "awaiting")
-        case .none:
-            print("None")
         }
     }
 
