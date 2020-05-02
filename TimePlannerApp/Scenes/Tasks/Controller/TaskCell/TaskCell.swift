@@ -20,8 +20,10 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var priorityView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var notificationLabel: UILabel!
-    @IBOutlet private weak var progressView: ProgressView!
+    @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var infoMetricLabel: UILabel!
+    @IBOutlet private weak var infoDescriptionLabel: UILabel!
     @IBOutlet private weak var progressButton: UIButton!
 
     var didUserChangePerformedType: (() -> Void)?
@@ -35,7 +37,6 @@ class TaskCell: UITableViewCell, ReusableView {
         setupObservers(with: task)
         setupViewSettings()
         setupPriorityView(with: task.priority ?? .none)
-        progressView.layoutIfNeeded()
         titleLabel.text = task.title
         descriptionLabel.text = task.description
     }
@@ -46,6 +47,7 @@ class TaskCell: UITableViewCell, ReusableView {
                 guard let state  = state.element as? TaskViewType else {
                     return
                 }
+                self?.progressView.layoutIfNeeded()
                 self?.configureViewState(state, performedType: task.perfomedViewType)
         }.disposed(by: rxBag)
     }
@@ -54,21 +56,29 @@ class TaskCell: UITableViewCell, ReusableView {
         switch state {
         case .completed(let rating):
             notificationLabel.text = "Completed"
-            progressView.setupInfo(with: "Completed", description: "")
+            setProgressInfo(metric: "Completed", description: "")
             print(rating as Any)
         case .performed(let data):
             switch performedType {
             case .time:
-                progressView.setupInfo(with: data.timeBeforeEnding, description: "Befor ending")
+                infoMetricLabel.text = data.timeBeforeEnding
+                infoDescriptionLabel.text = "Befor ending"
             case .procentage:
-                progressView.setupInfo(with: "\(Int(data.procentage).description)%", description: "completed")
+                setProgressInfo(metric: "\(Int(data.procentage).description)%", description: "completed")
             }
-            progressView.confogureProgressView(with: Double(data.procentage / 100))
+            progressView.layer.configureCircleProgress(progress: Double(data.procentage / 100),
+                                                       lineWidth: 7,
+                                                       color: UIColor.green.cgColor)
             notificationLabel.text = "Before ending:"
         case .awaitingCompletion(let timeBeforeStarting):
             notificationLabel.text = "Before starting:"
-            progressView.setupInfo(with: timeBeforeStarting, description: "awaiting")
+            setProgressInfo(metric: timeBeforeStarting, description: "awaiting")
         }
+    }
+
+    private func setProgressInfo(metric: String?, description: String?) {
+        infoMetricLabel.text = metric
+        infoDescriptionLabel.text = description
     }
 
     private func setupPriorityView(with priority: TaskPriority) {

@@ -12,7 +12,7 @@ import RxCocoa
 class TasksViewModel: BaseViewModel {
 
     private enum Constants {
-        static let secondTimeInterval: Int = 1
+        static let refreshTaskStateInterval: Int = 50
     }
 
     let tasksViewData = BehaviorRelay<[TaskViewData]>(value: [])
@@ -48,7 +48,7 @@ class TasksViewModel: BaseViewModel {
         .disposed(by: rxBag)
 
         Observable<Int>
-            .interval(.milliseconds(Constants.secondTimeInterval), scheduler: MainScheduler.instance)
+            .interval(.milliseconds(Constants.refreshTaskStateInterval), scheduler: MainScheduler.instance)
             .map { _ in Void() }
             .bind(onNext: updateTasksState)
             .disposed(by: rxBag)
