@@ -18,6 +18,8 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let defaultStar = ImageAsset(name: "defaultStar")
+  internal static let selectedStar = ImageAsset(name: "selectedStar")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -29,15 +29,17 @@ class TasksViewModel: BaseViewModel {
     override func createObservers() {
 
         repository?.deleteAllTasks()
-        for index in 1...5 {
-            repository?.addTask(Task(id: UUID().description,
-                                     title: "My Second Task",
-                                     taskDescription: "This is my second task",
-                                     startTime: Date(),
-                                     endTime: Calendar.current.date(byAdding: .minute,
-                                                                    value: index,
-                                                                    to: Date()) ?? Date(),
-                                     priority: index))
+        for index in 1...6 {
+            let task = Task(id: UUID().description,
+                            title: "My Second Task",
+                            taskDescription: "This is my second task",
+                            startTime: Date(),
+                            endTime: Calendar.current.date(byAdding: .second,
+                                                        value: 7,
+                                                        to: Date()) ?? Date(),
+                            priority: index - 1)
+            task.rating.value = index - 1
+            repository?.addTask(task)
         }
 
         repository?.tasks
@@ -72,12 +74,10 @@ class TasksViewModel: BaseViewModel {
             return []
         }
         return tasks.compactMap {
-            let tasksData = TaskViewData(title: $0.title ?? "",
-                                     description: $0.taskDescription ?? "",
-                                     priority: $0.taskPriority,
-                                     performedTaskType: .procentage)
-            tasksData.state.accept(resolveTaskState($0))
-            return tasksData
+            TaskViewData(title: $0.title ?? "",
+                        description: $0.taskDescription ?? "",
+                        priority: $0.taskPriority,
+                        performedTaskType: .procentage)
         }
     }
 

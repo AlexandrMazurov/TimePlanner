@@ -25,6 +25,8 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var infoMetricLabel: UILabel!
     @IBOutlet private weak var infoDescriptionLabel: UILabel!
     @IBOutlet private weak var progressButton: UIButton!
+    @IBOutlet private weak var ratingView: RatingView!
+    @IBOutlet private weak var awatingRatingLabel: UILabel!
 
     var didUserChangePerformedType: (() -> Void)?
     let rxBag = DisposeBag()
@@ -39,10 +41,12 @@ class TaskCell: UITableViewCell, ReusableView {
         setupPriorityView(with: task.priority ?? .none)
         titleLabel.text = task.title
         descriptionLabel.text = task.description
+        awatingRatingLabel.text = "Awaiting rating"
     }
 
     private func setupObservers(with task: TaskViewData) {
         task.state
+            .distinctUntilChanged()
             .subscribe { [weak self] state in
                 guard let state  = state.element as? TaskViewType else {
                     return
@@ -56,9 +60,13 @@ class TaskCell: UITableViewCell, ReusableView {
         switch state {
         case .completed(let rating):
             notificationLabel.text = "Completed"
-            setProgressInfo(metric: "Completed", description: "")
-            print(rating as Any)
+            ratingView.configure(with: rating ?? .none, isSelectable: false)
+            progressView.isHidden = rating == TaskRating.none
+            ratingView.isHidden = rating == TaskRating.none
+            awatingRatingLabel.isHidden = rating != TaskRating.none
         case .performed(let data):
+            awatingRatingLabel.isHidden = true
+            ratingView.isHidden = true
             switch performedType {
             case .time:
                 infoMetricLabel.text = data.timeBeforeEnding
@@ -71,9 +79,12 @@ class TaskCell: UITableViewCell, ReusableView {
                                                        color: UIColor.green.cgColor)
             notificationLabel.text = "Before ending:"
         case .awaitingCompletion(let timeBeforeStarting):
+            awatingRatingLabel.isHidden = true
+            ratingView.isHidden = true
             notificationLabel.text = "Before starting:"
             setProgressInfo(metric: timeBeforeStarting, description: "awaiting")
         }
+        layoutIfNeeded()
     }
 
     private func setProgressInfo(metric: String?, description: String?) {

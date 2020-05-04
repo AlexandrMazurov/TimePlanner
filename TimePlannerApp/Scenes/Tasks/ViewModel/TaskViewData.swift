@@ -9,19 +9,19 @@
 import RxSwift
 import RxCocoa
 
-public enum TaskViewType {
-    case completed(rating: TaskScoreRating?)
+public enum TaskViewType: Equatable {
+    case completed(rating: TaskRating?)
     case performed(timeBeforeEnding: String, procentage: Double)
     case awaitingCompletion(timeBeforeStarting: String)
 }
 
-public enum TaskScoreRating: Int {
-    case none
+public enum TaskRating: Int, CaseIterable {
     case lowest
     case low
     case average
     case high
     case highest
+    case none
 }
 
 public enum PerformedTaskType: Int {
@@ -29,7 +29,7 @@ public enum PerformedTaskType: Int {
     case time
 }
 
-typealias TaskPriority = TaskScoreRating
+typealias TaskPriority = TaskRating
 
 class TaskViewData {
 

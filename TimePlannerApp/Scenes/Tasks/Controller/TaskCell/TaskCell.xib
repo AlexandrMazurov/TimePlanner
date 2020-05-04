@@ -70,6 +70,16 @@
                                     <action selector="porgressButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="Ixx-0r-zEH"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="key-yC-fgz" customClass="RatingView" customModule="TimePlannerApp" customModuleProvider="target">
+                                <rect key="frame" x="391" y="46" width="111" height="111"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Y8g-h1-dLa">
+                                <rect key="frame" x="392" y="47" width="109" height="109"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="K7O-2o-prN">
                                 <rect key="frame" x="392" y="13" width="109" height="21"/>
                                 <constraints>
@@ -94,17 +104,23 @@
                             <constraint firstItem="Imz-FV-56F" firstAttribute="top" secondItem="jmt-2i-gzQ" secondAttribute="bottom" constant="13" id="3yX-oJ-n0D"/>
                             <constraint firstAttribute="trailing" secondItem="FoS-I4-ZHW" secondAttribute="trailing" constant="8" id="7kd-Ru-JHH"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="Bcu-fI-cDG"/>
+                            <constraint firstAttribute="trailing" secondItem="Y8g-h1-dLa" secondAttribute="trailing" constant="8" id="E0W-5G-hX3"/>
                             <constraint firstItem="Imz-FV-56F" firstAttribute="leading" secondItem="eMq-Yl-rUw" secondAttribute="leading" constant="8" id="F6X-wj-DnU"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="FBh-w8-ICA"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="width" secondItem="FoS-I4-ZHW" secondAttribute="width" id="G5P-uB-IQN"/>
                             <constraint firstAttribute="bottom" secondItem="Fmf-u5-SKX" secondAttribute="bottom" constant="13" id="MbU-CA-mTZ"/>
+                            <constraint firstItem="key-yC-fgz" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="12" id="MlJ-Vp-WEX"/>
                             <constraint firstItem="Fmf-u5-SKX" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="Qci-gR-R0t"/>
                             <constraint firstItem="K3k-Nf-Sba" firstAttribute="height" secondItem="jmt-2i-gzQ" secondAttribute="height" id="SYz-ee-y3V"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="SgG-co-Ivq"/>
+                            <constraint firstItem="Y8g-h1-dLa" firstAttribute="top" secondItem="K7O-2o-prN" secondAttribute="bottom" constant="13" id="TZj-VK-ARt"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="WeL-rL-yDj"/>
                             <constraint firstItem="jmt-2i-gzQ" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="XXf-Ja-of4"/>
+                            <constraint firstAttribute="bottom" secondItem="Y8g-h1-dLa" secondAttribute="bottom" constant="13" id="YYD-ro-fyp"/>
+                            <constraint firstAttribute="bottom" secondItem="key-yC-fgz" secondAttribute="bottom" constant="12" id="Za7-vS-aAt"/>
                             <constraint firstAttribute="bottom" secondItem="Imz-FV-56F" secondAttribute="bottom" constant="13" id="aD2-TQ-lbz"/>
                             <constraint firstItem="jmt-2i-gzQ" firstAttribute="leading" secondItem="K3k-Nf-Sba" secondAttribute="trailing" constant="8" id="c3s-OO-CaR"/>
+                            <constraint firstItem="Y8g-h1-dLa" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="gRq-FA-KcL"/>
                             <constraint firstAttribute="trailing" secondItem="Fmf-u5-SKX" secondAttribute="trailing" constant="8" id="hNc-X8-l9a"/>
                             <constraint firstItem="Fmf-u5-SKX" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="hxF-Uj-X8t"/>
                             <constraint firstItem="FoS-I4-ZHW" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="8" id="i2f-ZH-nN1"/>
@@ -112,6 +128,8 @@
                             <constraint firstAttribute="bottom" secondItem="FoS-I4-ZHW" secondAttribute="bottom" constant="13" id="tEO-EN-A4r"/>
                             <constraint firstItem="K3k-Nf-Sba" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="vT0-0G-cMm"/>
                             <constraint firstItem="K7O-2o-prN" firstAttribute="top" secondItem="eMq-Yl-rUw" secondAttribute="top" constant="13" id="xZM-Cs-jyV"/>
+                            <constraint firstAttribute="trailing" secondItem="key-yC-fgz" secondAttribute="trailing" constant="7" id="xln-rz-bxI"/>
+                            <constraint firstItem="key-yC-fgz" firstAttribute="leading" secondItem="Imz-FV-56F" secondAttribute="trailing" constant="7" id="yPm-mo-bU3"/>
                             <constraint firstAttribute="bottom" secondItem="FoS-I4-ZHW" secondAttribute="bottom" constant="13" id="z6p-sa-WqJ"/>
                         </constraints>
                     </view>
@@ -124,6 +142,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="awatingRatingLabel" destination="Y8g-h1-dLa" id="4SK-81-uPH"/>
                 <outlet property="descriptionLabel" destination="Imz-FV-56F" id="9xD-aC-ZdD"/>
                 <outlet property="infoDescriptionLabel" destination="O8r-zX-AU0" id="iRA-nz-mLU"/>
                 <outlet property="infoMetricLabel" destination="52n-ZB-Eno" id="ape-xr-H30"/>
@@ -131,6 +150,7 @@
                 <outlet property="priorityView" destination="K3k-Nf-Sba" id="dnl-3q-9Ql"/>
                 <outlet property="progressButton" destination="Fmf-u5-SKX" id="K9s-Pr-yiK"/>
                 <outlet property="progressView" destination="FoS-I4-ZHW" id="jsZ-tB-Wa1"/>
+                <outlet property="ratingView" destination="key-yC-fgz" id="OLm-Pp-6WL"/>
                 <outlet property="taskView" destination="eMq-Yl-rUw" id="ZdO-fu-NBB"/>
                 <outlet property="titleLabel" destination="jmt-2i-gzQ" id="rtE-P9-l5I"/>
             </connections>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingView" customModule="TimePlannerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="ratingStackView" destination="qtC-mX-Cz2" id="dmD-eT-mqg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="570" height="197"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qtC-mX-Cz2">
+                    <rect key="frame" x="0.0" y="0.0" width="570" height="197"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qtC-mX-Cz2" secondAttribute="bottom" id="2Ux-Y9-xS0"/>
+                <constraint firstItem="qtC-mX-Cz2" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="4TE-aq-EGE"/>
+                <constraint firstItem="qtC-mX-Cz2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="9fK-d7-bZF"/>
+                <constraint firstItem="qtC-mX-Cz2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="K3S-3V-ic7"/>
+                <constraint firstItem="qtC-mX-Cz2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qtF-RR-lZT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="253.62318840579712" y="-80.691964285714278"/>
+        </view>
+    </objects>
+</document>
