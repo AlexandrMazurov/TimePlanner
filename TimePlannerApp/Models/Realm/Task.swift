@@ -60,6 +60,9 @@ extension Task {
     }
 
     var taskRating: TaskRating? {
-        TaskRating(rawValue: rating.value ?? .zero)
+        guard let rating = rating.value else {
+            return .notRaited
+        }
+        return TaskRating(rawValue: rating)
     }
 }

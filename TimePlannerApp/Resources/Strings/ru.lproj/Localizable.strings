@@ -5,3 +5,10 @@
   Created by Mazurov, Aleksandr on 4/16/20.
   Copyright © 2020 AlexandrMazurov. All rights reserved.
 */
+
+"task.awaiting.rating.title" = "Ожидает оценки";
+"task.state.completed.title" = "Выполнено";
+"task.state.before.starting.title" = "До начала";
+"task.state.awaiting.title" = "Ожидает";
+"task.state.performed.title" = "Выполняется";
+"task.info.before.ending.title" = "До конца";

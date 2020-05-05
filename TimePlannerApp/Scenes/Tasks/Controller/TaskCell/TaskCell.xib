@@ -67,7 +67,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmf-u5-SKX">
                                 <rect key="frame" x="392" y="47" width="109" height="109"/>
                                 <connections>
-                                    <action selector="porgressButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="Ixx-0r-zEH"/>
+                                    <action selector="porgressButtonTapped:" destination="FSV-na-yvJ" eventType="touchUpInside" id="H86-9R-bEB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="key-yC-fgz" customClass="RatingView" customModule="TimePlannerApp" customModuleProvider="target">
@@ -146,11 +146,11 @@
                 <outlet property="descriptionLabel" destination="Imz-FV-56F" id="9xD-aC-ZdD"/>
                 <outlet property="infoDescriptionLabel" destination="O8r-zX-AU0" id="iRA-nz-mLU"/>
                 <outlet property="infoMetricLabel" destination="52n-ZB-Eno" id="ape-xr-H30"/>
-                <outlet property="notificationLabel" destination="K7O-2o-prN" id="GtZ-S5-bjA"/>
                 <outlet property="priorityView" destination="K3k-Nf-Sba" id="dnl-3q-9Ql"/>
                 <outlet property="progressButton" destination="Fmf-u5-SKX" id="K9s-Pr-yiK"/>
                 <outlet property="progressView" destination="FoS-I4-ZHW" id="jsZ-tB-Wa1"/>
                 <outlet property="ratingView" destination="key-yC-fgz" id="OLm-Pp-6WL"/>
+                <outlet property="stateLabel" destination="K7O-2o-prN" id="GtZ-S5-bjA"/>
                 <outlet property="taskView" destination="eMq-Yl-rUw" id="ZdO-fu-NBB"/>
                 <outlet property="titleLabel" destination="jmt-2i-gzQ" id="rtE-P9-l5I"/>
             </connections>

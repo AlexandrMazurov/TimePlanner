@@ -34,8 +34,8 @@ class TasksViewModel: BaseViewModel {
                             title: "My Second Task",
                             taskDescription: "This is my second task",
                             startTime: Date(),
-                            endTime: Calendar.current.date(byAdding: .second,
-                                                        value: 7,
+                            endTime: Calendar.current.date(byAdding: .minute,
+                                                        value: index,
                                                         to: Date()) ?? Date(),
                             priority: index - 1)
             task.rating.value = index - 1

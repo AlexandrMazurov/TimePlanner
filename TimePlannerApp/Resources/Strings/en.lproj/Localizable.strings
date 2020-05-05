@@ -5,3 +5,10 @@
   Created by Mazurov, Aleksandr on 4/16/20.
   Copyright © 2020 AlexandrMazurov. All rights reserved.
 */
+
+"task.awaiting.rating.title" = "Awaiting rating";
+"task.state.completed.title" = "Completed";
+"task.state.before.starting.title" = "Before starting";
+"task.state.awaiting.title" = "Awaiting";
+"task.state.performed.title" = "Performed";
+"task.info.before.ending.title" = "Before ending";

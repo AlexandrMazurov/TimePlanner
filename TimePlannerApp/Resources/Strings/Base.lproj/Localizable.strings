@@ -5,3 +5,10 @@
   Created by Andrey Sak on 2/16/18.
   Copyright © 2018 gameSenseSports. All rights reserved.
 */
+
+"task.awaiting.rating.title" = "Awaiting rating";
+"task.state.completed.title" = "Completed";
+"task.state.before.starting.title" = "Before starting";
+"task.state.awaiting.title" = "Awaiting";
+"task.state.performed.title" = "Performed";
+"task.info.before.ending.title" = "Before ending";

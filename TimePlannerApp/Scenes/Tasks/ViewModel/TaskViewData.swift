@@ -21,7 +21,7 @@ public enum TaskRating: Int, CaseIterable {
     case average
     case high
     case highest
-    case none
+    case notRaited
 }
 
 public enum PerformedTaskType: Int {

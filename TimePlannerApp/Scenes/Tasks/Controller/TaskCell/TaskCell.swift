@@ -14,12 +14,27 @@ private enum ExecutingTaskViewType {
     case procentage
 }
 
+private enum Constants {
+    static let awaitingRatingTitle = L10n.Task.Awaiting.Rating.title
+    static let completedTitle = L10n.Task.State.Completed.title
+    static let beforeEndingTitle = L10n.Task.Info.Before.Ending.title
+    static let beforeStartingTitle = L10n.Task.State.Before.Starting.title
+    static let awaitingStateTitle = L10n.Task.State.Awaiting.title
+    static let performedTitle = L10n.Task.State.Performed.title
+    static let procentageDevider: Double = 100
+    static let circleProgressLineWidth: CGFloat = 7
+    static let halfViewSizeDevider: CGFloat = 2
+    static let taskViewShadowOpacity: Float = 1
+    static let taskViewShadowRadius: CGFloat = 3
+    static let taskViewCornerRadius: CGFloat = 10
+}
+
 class TaskCell: UITableViewCell, ReusableView {
 
     @IBOutlet private weak var taskView: UIView!
     @IBOutlet private weak var priorityView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var notificationLabel: UILabel!
+    @IBOutlet private weak var stateLabel: UILabel!
     @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var infoMetricLabel: UILabel!
@@ -31,17 +46,17 @@ class TaskCell: UITableViewCell, ReusableView {
     var didUserChangePerformedType: (() -> Void)?
     let rxBag = DisposeBag()
 
-    @IBAction func porgressButtonTapped(_ sender: UIButton) {
-        self.didUserChangePerformedType?()
-    }
-
     func configure(with task: TaskViewData) {
         setupObservers(with: task)
         setupViewSettings()
-        setupPriorityView(with: task.priority ?? .none)
+        setupPriorityView(with: task.priority ?? .notRaited)
         titleLabel.text = task.title
         descriptionLabel.text = task.description
-        awatingRatingLabel.text = "Awaiting rating"
+        awatingRatingLabel.text = Constants.awaitingRatingTitle
+    }
+
+    @IBAction func porgressButtonTapped(_ sender: UIButton) {
+        self.didUserChangePerformedType?()
     }
 
     private func setupObservers(with task: TaskViewData) {
@@ -51,40 +66,52 @@ class TaskCell: UITableViewCell, ReusableView {
                 guard let state  = state.element as? TaskViewType else {
                     return
                 }
-                self?.progressView.layoutIfNeeded()
                 self?.configureViewState(state, performedType: task.perfomedViewType)
         }.disposed(by: rxBag)
+
     }
 
     private func configureViewState(_ state: TaskViewType, performedType: PerformedTaskType) {
         switch state {
         case .completed(let rating):
-            notificationLabel.text = "Completed"
-            ratingView.configure(with: rating ?? .none, isSelectable: false)
-            progressView.isHidden = rating == TaskRating.none
-            ratingView.isHidden = rating == TaskRating.none
-            awatingRatingLabel.isHidden = rating != TaskRating.none
+            resolveCompletedState(rating: rating)
         case .performed(let data):
-            awatingRatingLabel.isHidden = true
-            ratingView.isHidden = true
-            switch performedType {
-            case .time:
-                infoMetricLabel.text = data.timeBeforeEnding
-                infoDescriptionLabel.text = "Befor ending"
-            case .procentage:
-                setProgressInfo(metric: "\(Int(data.procentage).description)%", description: "completed")
-            }
-            progressView.layer.configureCircleProgress(progress: Double(data.procentage / 100),
-                                                       lineWidth: 7,
-                                                       color: UIColor.green.cgColor)
-            notificationLabel.text = "Before ending:"
+            resolvePerformedState(performedType: performedType,
+                                  time: data.timeBeforeEnding,
+                                  procentage: data.procentage)
         case .awaitingCompletion(let timeBeforeStarting):
-            awatingRatingLabel.isHidden = true
-            ratingView.isHidden = true
-            notificationLabel.text = "Before starting:"
-            setProgressInfo(metric: timeBeforeStarting, description: "awaiting")
+            resolveAwaitingCompletionState(timeBeforeStarting: timeBeforeStarting)
         }
-        layoutIfNeeded()
+    }
+
+    private func resolveCompletedState(rating: TaskRating?) {
+        stateLabel.text = Constants.completedTitle
+        ratingView.configure(with: rating ?? .notRaited, isSelectable: false)
+        progressView.isHidden = rating == .notRaited
+        ratingView.isHidden = rating == .notRaited
+        awatingRatingLabel.isHidden = rating != .notRaited
+    }
+
+    private func resolvePerformedState(performedType: PerformedTaskType, time: String, procentage: Double) {
+        stateLabel.text = Constants.performedTitle
+        awatingRatingLabel.isHidden = true
+        ratingView.isHidden = true
+        switch performedType {
+        case .time:
+            setProgressInfo(metric: time, description: Constants.beforeEndingTitle)
+        case .procentage:
+            setProgressInfo(metric: "\(Int(procentage).description)%", description: Constants.completedTitle)
+        }
+        progressView.layer.configureCircleProgress(progress: procentage / Constants.procentageDevider,
+                                                   lineWidth: Constants.circleProgressLineWidth,
+                                                   color: UIColor.green.cgColor)
+    }
+
+    private func resolveAwaitingCompletionState(timeBeforeStarting: String) {
+        awatingRatingLabel.isHidden = true
+        ratingView.isHidden = true
+        stateLabel.text = Constants.beforeStartingTitle
+        setProgressInfo(metric: timeBeforeStarting, description: Constants.awaitingStateTitle)
     }
 
     private func setProgressInfo(metric: String?, description: String?) {
@@ -94,7 +121,7 @@ class TaskCell: UITableViewCell, ReusableView {
 
     private func setupPriorityView(with priority: TaskPriority) {
         switch priority {
-        case .none:
+        case .notRaited:
             priorityView.backgroundColor = .clear
         case .lowest:
             priorityView.backgroundColor = ColorName.lowestPriority.color
@@ -110,12 +137,12 @@ class TaskCell: UITableViewCell, ReusableView {
     }
 
     private func setupViewSettings() {
-        priorityView.layer.cornerRadius = priorityView.frame.size.height / 2
+        priorityView.layer.cornerRadius = priorityView.frame.size.height / Constants.halfViewSizeDevider
         descriptionLabel.numberOfLines = .max
         taskView.layer.shadowColor = UIColor.lightGray.cgColor
-        taskView.layer.shadowOpacity = 1
+        taskView.layer.shadowOpacity = Constants.taskViewShadowOpacity
         taskView.layer.shadowOffset = .zero
-        taskView.layer.shadowRadius = 3
-        taskView.layer.cornerRadius = 10
+        taskView.layer.shadowRadius = Constants.taskViewShadowRadius
+        taskView.layer.cornerRadius = Constants.taskViewCornerRadius
     }
 }

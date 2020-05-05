@@ -37,14 +37,12 @@ class RatingView: UIView, NibLoadable {
         }
     }
 
-    func makeRatingIfNeeded(rating: TaskRating) {
-        if rating != TaskRating.none {
+    private func makeRatingIfNeeded(rating: TaskRating) {
+        if rating != .notRaited {
             guard let ratingIndex = TaskRating.allCases.firstIndex(of: rating) else {
                 return
             }
-            for (index, button) in stackViewButtons.enumerated() {
-                button.isSelected = index <= ratingIndex
-            }
+            setButtonsSelected(to: ratingIndex)
         }
     }
 
@@ -74,13 +72,17 @@ class RatingView: UIView, NibLoadable {
         button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     }
 
+    private func setButtonsSelected(to buttonIndex: Int) {
+        for (index, button) in stackViewButtons.enumerated() {
+            button.isSelected = index <= buttonIndex
+        }
+    }
+
     @objc private func buttonTapped(_ sender: UIButton) {
         guard let selectedButtonIndex = stackViewButtons.firstIndex(of: sender) else {
             return
         }
-        for (index, button) in stackViewButtons.enumerated() {
-            button.isSelected = index <= selectedButtonIndex
-        }
+        setButtonsSelected(to: selectedButtonIndex)
         rating.accept(TaskRating(rawValue: selectedButtonIndex))
     }
 
