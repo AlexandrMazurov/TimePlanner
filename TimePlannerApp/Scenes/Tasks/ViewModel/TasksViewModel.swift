@@ -31,20 +31,6 @@ class TasksViewModel: BaseViewModel {
 
     override func createObservers() {
 
-        repository?.deleteAllTasks()
-        for index in 1...6 {
-            let task = Task(id: UUID().description,
-                            title: "My Second Task",
-                            taskDescription: "This is my second task",
-                            startTime: Date(),
-                            endTime: Calendar.current.date(byAdding: .minute,
-                                                        value: index,
-                                                        to: Date()) ?? Date(),
-                            priority: index - 1)
-            task.rating.value = index - 1
-            repository?.addTask(task)
-        }
-
         repository?.tasks
             .map({ [weak self] in
                 self?.setupViewData(from: $0) ?? []
@@ -91,11 +77,11 @@ class TasksViewModel: BaseViewModel {
             let endTime = task.endTime else {
             return nil
         }
-        if now >= startTime && now <= endTime {
+        if startTime > now {
+            return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
+        } else if now >= startTime && now <= endTime {
             return .performed(timeBeforeEnding: format(duration: endTime - now),
                               procentage: calculateProcentage(startTime: startTime, endTime: endTime))
-        } else if startTime > now {
-            return .awaitingCompletion(timeBeforeStarting: format(duration: startTime - now))
         } else {
             return .completed(rating: task.taskRating)
         }

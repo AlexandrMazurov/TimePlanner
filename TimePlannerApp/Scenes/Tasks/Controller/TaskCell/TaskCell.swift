@@ -127,6 +127,9 @@ class TaskCell: UITableViewCell, ReusableView {
         ratingView.isHidden = true
         stateLabel.text = Constants.beforeStartingTitle
         setProgressInfo(metric: timeBeforeStarting, description: Constants.awaitingStateTitle)
+        progressView.layer.configureCircleProgress(progress: 0.0,
+                                                   lineWidth: Constants.circleProgressLineWidth,
+                                                   color: UIColor.clear.cgColor)
     }
 
     private func setProgressInfo(metric: String?, description: String?) {
