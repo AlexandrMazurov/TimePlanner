@@ -39,6 +39,12 @@
 		4B3C75402402CC06004B584E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C753F2402CC06004B584E /* StatisticsViewController.swift */; };
 		4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3C75412402CC24004B584E /* SettingsViewController.swift */; };
 		4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9342BB242128230013F520 /* TabBarControllersModel.swift */; };
+		4BA074DE24630C05002F64D0 /* AppearanceConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074D524630C05002F64D0 /* AppearanceConfigProtocol.swift */; };
+		4BA074DF24630C05002F64D0 /* AppearanceColorsConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074D724630C05002F64D0 /* AppearanceColorsConfigProtocol.swift */; };
+		4BA074E024630C05002F64D0 /* AppearanceColorsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074D824630C05002F64D0 /* AppearanceColorsConfig.swift */; };
+		4BA074E124630C05002F64D0 /* AppearanceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074D924630C05002F64D0 /* AppearanceConfig.swift */; };
+		4BA074E224630C05002F64D0 /* AppearanceFontsConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074DB24630C05002F64D0 /* AppearanceFontsConfigProtocol.swift */; };
+		4BA074E324630C05002F64D0 /* AppearanceFontsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA074DC24630C05002F64D0 /* AppearanceFontsConfig.swift */; };
 		4BAE9EE5244E208300827FF2 /* TaskViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE4244E208300827FF2 /* TaskViewData.swift */; };
 		4BAE9EE7244E242500827FF2 /* Date+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE9EE6244E242500827FF2 /* Date+Time.swift */; };
 		4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */; };
@@ -98,6 +104,12 @@
 		4B3C753F2402CC06004B584E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		4B3C75412402CC24004B584E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B9342BB242128230013F520 /* TabBarControllersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllersModel.swift; sourceTree = "<group>"; };
+		4BA074D524630C05002F64D0 /* AppearanceConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceConfigProtocol.swift; sourceTree = "<group>"; };
+		4BA074D724630C05002F64D0 /* AppearanceColorsConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceColorsConfigProtocol.swift; sourceTree = "<group>"; };
+		4BA074D824630C05002F64D0 /* AppearanceColorsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceColorsConfig.swift; sourceTree = "<group>"; };
+		4BA074D924630C05002F64D0 /* AppearanceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceConfig.swift; sourceTree = "<group>"; };
+		4BA074DB24630C05002F64D0 /* AppearanceFontsConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceFontsConfigProtocol.swift; sourceTree = "<group>"; };
+		4BA074DC24630C05002F64D0 /* AppearanceFontsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceFontsConfig.swift; sourceTree = "<group>"; };
 		4BAE9EE4244E208300827FF2 /* TaskViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewData.swift; sourceTree = "<group>"; };
 		4BAE9EE6244E242500827FF2 /* Date+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Time.swift"; sourceTree = "<group>"; };
 		4BBCBCE22401AAA8008A12A8 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +220,7 @@
 		4B19BF5524485091006094D0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4BA074D424630C05002F64D0 /* AppearanceConfig */,
 				1F7F6B7523F9872000D917F8 /* Assets.xcassets */,
 				4B19BF63244853A4006094D0 /* Fonts */,
 				4B19BF622448539B006094D0 /* Colors */,
@@ -395,6 +408,35 @@
 				4BFC60CE244B72D900081946 /* Task.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		4BA074D424630C05002F64D0 /* AppearanceConfig */ = {
+			isa = PBXGroup;
+			children = (
+				4BA074DA24630C05002F64D0 /* Fonts */,
+				4BA074D624630C05002F64D0 /* Colors */,
+				4BA074D524630C05002F64D0 /* AppearanceConfigProtocol.swift */,
+				4BA074D924630C05002F64D0 /* AppearanceConfig.swift */,
+			);
+			path = AppearanceConfig;
+			sourceTree = "<group>";
+		};
+		4BA074D624630C05002F64D0 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				4BA074D724630C05002F64D0 /* AppearanceColorsConfigProtocol.swift */,
+				4BA074D824630C05002F64D0 /* AppearanceColorsConfig.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		4BA074DA24630C05002F64D0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4BA074DB24630C05002F64D0 /* AppearanceFontsConfigProtocol.swift */,
+				4BA074DC24630C05002F64D0 /* AppearanceFontsConfig.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4BAA1C642455CD23002F2B94 /* CustomViews */ = {
@@ -699,6 +741,8 @@
 				4B19BF7424485659006094D0 /* Fonts.swift in Sources */,
 				4B9342BC242128230013F520 /* TabBarControllersModel.swift in Sources */,
 				4B19BF7224485659006094D0 /* Colors.swift in Sources */,
+				4BA074DE24630C05002F64D0 /* AppearanceConfigProtocol.swift in Sources */,
+				4BA074E224630C05002F64D0 /* AppearanceFontsConfigProtocol.swift in Sources */,
 				4BFC60C4244AF3FD00081946 /* TaskCell.swift in Sources */,
 				4B3C75422402CC24004B584E /* SettingsViewController.swift in Sources */,
 				4BFC60C8244AFB0400081946 /* ReusableView.swift in Sources */,
@@ -712,9 +756,12 @@
 				4B0C8E2C245DB3BB005DE678 /* CALayer+CircleProgress.swift in Sources */,
 				4B19BF7324485659006094D0 /* LocalizedStrings.swift in Sources */,
 				4BFC60D1244B776200081946 /* LocalRepository.swift in Sources */,
+				4BA074E324630C05002F64D0 /* AppearanceFontsConfig.swift in Sources */,
+				4BA074E024630C05002F64D0 /* AppearanceColorsConfig.swift in Sources */,
 				4B3B177E241EBCE70046533A /* ControllerEntries.swift in Sources */,
 				4B19BF4A24438145006094D0 /* TasksViewModel.swift in Sources */,
 				4BAE9EE7244E242500827FF2 /* Date+Time.swift in Sources */,
+				4BA074E124630C05002F64D0 /* AppearanceConfig.swift in Sources */,
 				4BBCBCEF2401B223008A12A8 /* BaseViewController.swift in Sources */,
 				4BFC60CC244B727800081946 /* RepositoryProtocol.swift in Sources */,
 				4B3B1775241EB78E0046533A /* DashboardViewController.swift in Sources */,
@@ -726,6 +773,7 @@
 				4B19BF4D2443819B006094D0 /* StatisticsViewModel.swift in Sources */,
 				4BFC60CF244B72D900081946 /* Task.swift in Sources */,
 				4BBCBCE32401AAA8008A12A8 /* LaunchViewModel.swift in Sources */,
+				4BA074DF24630C05002F64D0 /* AppearanceColorsConfigProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

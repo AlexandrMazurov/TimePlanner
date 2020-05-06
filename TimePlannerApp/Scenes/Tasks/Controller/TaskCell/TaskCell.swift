@@ -2,7 +2,7 @@
 //  TaskCell.swift
 //  TimePlannerApp
 //
-//  Created by Mazurov, Aleksandr on 4/18/20.
+//  Created by Mazurov, Aleksandr on 5/6/20.
 //  Copyright © 2020 AlexandrMazurov. All rights reserved.
 //
 
@@ -43,6 +43,7 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var ratingView: RatingView!
     @IBOutlet private weak var awatingRatingLabel: UILabel!
 
+    var appearenceConfig: AppearanceConfigProtocol?
     let userChangedPerformType = PublishSubject<Bool>()
     private(set) var rxBag = DisposeBag()
 
@@ -51,13 +52,20 @@ class TaskCell: UITableViewCell, ReusableView {
         rxBag = DisposeBag()
     }
 
-    func configure(with task: TaskViewData) {
+    func configure(with task: TaskViewData, appearenceConfig: AppearanceConfigProtocol?) {
+        self.appearenceConfig = appearenceConfig
+        setupSemanticColors()
         setupObservers(with: task)
         setupViewSettings()
         setupPriorityView(with: task.priority ?? .notRaited)
         titleLabel.text = task.title
         descriptionLabel.text = task.description
         awatingRatingLabel.text = Constants.awaitingRatingTitle
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setupSemanticColors()
     }
 
     private func setupObservers(with task: TaskViewData) {
@@ -146,10 +154,14 @@ class TaskCell: UITableViewCell, ReusableView {
     private func setupViewSettings() {
         priorityView.layer.cornerRadius = priorityView.frame.size.height / Constants.halfViewSizeDevider
         descriptionLabel.numberOfLines = .max
-        taskView.layer.shadowColor = UIColor.lightGray.cgColor
         taskView.layer.shadowOpacity = Constants.taskViewShadowOpacity
         taskView.layer.shadowOffset = .zero
         taskView.layer.shadowRadius = Constants.taskViewShadowRadius
         taskView.layer.cornerRadius = Constants.taskViewCornerRadius
+    }
+    
+    private func setupSemanticColors() {
+        taskView.backgroundColor = appearenceConfig?.colors?.cellColor
+        taskView.layer.shadowColor = appearenceConfig?.colors?.cellShadow.cgColor
     }
 }

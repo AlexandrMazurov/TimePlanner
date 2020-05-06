@@ -34,6 +34,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#09bbe8"></span>
   /// Alpha: 100% <br/> (0x09bbe8ff)
   internal static let lowestPriority = ColorName(rgbaValue: 0x09bbe8ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#1e211f"></span>
+  /// Alpha: 100% <br/> (0x1e211fff)
+  internal static let pitchDark = ColorName(rgbaValue: 0x1e211fff)
 }
 // swiftlint:enable identifier_name line_length type_body_length
 

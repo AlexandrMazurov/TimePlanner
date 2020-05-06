@@ -45,6 +45,20 @@ class DependencyRegistry: DependencyRegistryProtocol {
                                    statisticsViewController: $0.resolve(StatisticsViewController.self),
                                    settingsViewController: $0.resolve(SettingsViewController.self))
         }
+
+        container.register(AppearanceColorsConfigProtocol.self) { _ in
+            AppearanceColorsConfig()
+        }
+
+        container.register(AppearanceFontsConfigProtocol.self) { _ in
+            AppearanceFontsConfig()
+        }
+
+        container.register(AppearanceConfigProtocol.self) {
+            AppearanceConfig(colorsConfig: $0.resolve(AppearanceColorsConfigProtocol.self),
+                             fontsConfig: $0.resolve(AppearanceFontsConfigProtocol.self))
+        }.inObjectScope(.container)
+
         container.register(LocalRepository.self) { _ in
             LocalRepository()
         }.inObjectScope(.container)
@@ -64,7 +78,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
         }
 
         container.register(TasksViewModel.self) {
-            TasksViewModel(repository: $0.resolve(LocalRepository.self))
+            TasksViewModel(repository: $0.resolve(LocalRepository.self),
+                           appearenceConfig: $0.resolve(AppearanceConfigProtocol.self))
         }
 
         container.register(StatisticsViewModel.self) { _ in

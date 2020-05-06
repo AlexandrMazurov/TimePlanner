@@ -17,9 +17,12 @@ class TasksViewModel: BaseViewModel {
 
     let tasksViewData = BehaviorRelay<[TaskViewData]>(value: [])
     weak var repository: RepositoryProtocol?
+    weak var appearenceConfig: AppearanceConfigProtocol?
 
-    init(repository: RepositoryProtocol?) {
+    init(repository: RepositoryProtocol?,
+         appearenceConfig: AppearanceConfigProtocol?) {
         self.repository = repository
+        self.appearenceConfig = appearenceConfig
     }
 
     override func setup() {

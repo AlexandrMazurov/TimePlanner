@@ -44,7 +44,7 @@ class TasksViewController: BaseViewController {
                 .items(cellIdentifier: TaskCell.reuseIdentifier,
                        cellType: TaskCell.self)) { row, task, cell in
                         cell.selectionStyle = .none
-                        cell.configure(with: task)
+                        cell.configure(with: task, appearenceConfig: viewModel.appearenceConfig)
                         cell.userChangedPerformType
                             .asDriver(onErrorJustReturn: false)
                             .drive(onNext: { [weak self] _ in

@@ -4,3 +4,4 @@ lowPriority                    : e1e809
 averagePriority                : 3dcf04
 highPriority                   : eb6e00
 highestPriority                : eb1000
+pitchDark                      : #1e211f
