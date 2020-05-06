@@ -43,8 +43,13 @@ class TaskCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var ratingView: RatingView!
     @IBOutlet private weak var awatingRatingLabel: UILabel!
 
-    var didUserChangePerformedType: (() -> Void)?
-    let rxBag = DisposeBag()
+    let userChangedPerformType = PublishSubject<Bool>()
+    private(set) var rxBag = DisposeBag()
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        rxBag = DisposeBag()
+    }
 
     func configure(with task: TaskViewData) {
         setupObservers(with: task)
@@ -53,10 +58,6 @@ class TaskCell: UITableViewCell, ReusableView {
         titleLabel.text = task.title
         descriptionLabel.text = task.description
         awatingRatingLabel.text = Constants.awaitingRatingTitle
-    }
-
-    @IBAction func porgressButtonTapped(_ sender: UIButton) {
-        self.didUserChangePerformedType?()
     }
 
     private func setupObservers(with task: TaskViewData) {
@@ -68,6 +69,12 @@ class TaskCell: UITableViewCell, ReusableView {
                 }
                 self?.configureViewState(state, performedType: task.perfomedViewType)
         }.disposed(by: rxBag)
+
+        progressButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.userChangedPerformType.onNext(true)
+            })
+            .disposed(by: rxBag)
 
     }
 
