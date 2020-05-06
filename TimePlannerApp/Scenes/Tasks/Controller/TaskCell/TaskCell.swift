@@ -159,7 +159,7 @@ class TaskCell: UITableViewCell, ReusableView {
         taskView.layer.shadowRadius = Constants.taskViewShadowRadius
         taskView.layer.cornerRadius = Constants.taskViewCornerRadius
     }
-    
+
     private func setupSemanticColors() {
         taskView.backgroundColor = appearenceConfig?.colors?.cellColor
         taskView.layer.shadowColor = appearenceConfig?.colors?.cellShadow.cgColor
