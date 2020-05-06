@@ -94,7 +94,7 @@ class TaskCell: UITableViewCell, ReusableView {
     private func resolveCompletedState(rating: TaskRating?) {
         stateLabel.text = Constants.completedTitle
         ratingView.configure(with: rating ?? .notRaited, isSelectable: false)
-        progressView.isHidden = rating == .notRaited
+        progressView.isHidden = true
         ratingView.isHidden = rating == .notRaited
         awatingRatingLabel.isHidden = rating != .notRaited
     }
